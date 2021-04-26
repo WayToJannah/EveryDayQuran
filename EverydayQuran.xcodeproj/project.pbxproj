@@ -13,6 +13,9 @@
 		C7DA5ADB2636E4E10021EACC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7DA5ADA2636E4E10021EACC /* Preview Assets.xcassets */; };
 		C7DA5AE62636E4E30021EACC /* EverydayQuranTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DA5AE52636E4E30021EACC /* EverydayQuranTests.swift */; };
 		C7DA5AF12636E4E30021EACC /* EverydayQuranUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DA5AF02636E4E30021EACC /* EverydayQuranUITests.swift */; };
+		C7DA5B032636E88D0021EACC /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DA5B022636E88D0021EACC /* SplashScreen.swift */; };
+		C7DA5B0A2636F14C0021EACC /* PoppinsBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C7DA5B082636F14C0021EACC /* PoppinsBold.ttf */; };
+		C7DA5B0B2636F14C0021EACC /* PoppinsRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C7DA5B092636F14C0021EACC /* PoppinsRegular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +48,9 @@
 		C7DA5AEC2636E4E30021EACC /* EverydayQuranUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EverydayQuranUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7DA5AF02636E4E30021EACC /* EverydayQuranUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverydayQuranUITests.swift; sourceTree = "<group>"; };
 		C7DA5AF22636E4E30021EACC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C7DA5B022636E88D0021EACC /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		C7DA5B082636F14C0021EACC /* PoppinsBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PoppinsBold.ttf; sourceTree = "<group>"; };
+		C7DA5B092636F14C0021EACC /* PoppinsRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PoppinsRegular.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,11 +101,13 @@
 		C7DA5AD22636E4DF0021EACC /* EverydayQuran */ = {
 			isa = PBXGroup;
 			children = (
+				C7DA5B072636F1410021EACC /* Font */,
 				C7DA5AD32636E4DF0021EACC /* EverydayQuranApp.swift */,
 				C7DA5AD52636E4DF0021EACC /* ContentView.swift */,
 				C7DA5AD72636E4E10021EACC /* Assets.xcassets */,
 				C7DA5ADC2636E4E10021EACC /* Info.plist */,
 				C7DA5AD92636E4E10021EACC /* Preview Content */,
+				C7DA5B022636E88D0021EACC /* SplashScreen.swift */,
 			);
 			path = EverydayQuran;
 			sourceTree = "<group>";
@@ -128,6 +136,15 @@
 				C7DA5AF22636E4E30021EACC /* Info.plist */,
 			);
 			path = EverydayQuranUITests;
+			sourceTree = "<group>";
+		};
+		C7DA5B072636F1410021EACC /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				C7DA5B082636F14C0021EACC /* PoppinsBold.ttf */,
+				C7DA5B092636F14C0021EACC /* PoppinsRegular.ttf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,7 +251,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7DA5ADB2636E4E10021EACC /* Preview Assets.xcassets in Resources */,
+				C7DA5B0A2636F14C0021EACC /* PoppinsBold.ttf in Resources */,
 				C7DA5AD82636E4E10021EACC /* Assets.xcassets in Resources */,
+				C7DA5B0B2636F14C0021EACC /* PoppinsRegular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7DA5B032636E88D0021EACC /* SplashScreen.swift in Sources */,
 				C7DA5AD62636E4DF0021EACC /* ContentView.swift in Sources */,
 				C7DA5AD42636E4DF0021EACC /* EverydayQuranApp.swift in Sources */,
 			);
