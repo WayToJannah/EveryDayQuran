@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="QuranBG" translatesAutoresizingMaskIntoConstraints="NO" id="2a0-jr-WLA">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ESX-pi-E7B">
+                                <rect key="frame" x="87.666666666666686" y="94" width="200" height="88"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EveryDay Quran" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GJd-Yh-RWb">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="40.666666666666664"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                        <color key="textColor" name="SplashTitle"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Learn Quran and Recite once everyday" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vmW-4z-Q5U">
+                                        <rect key="frame" x="5.3333333333333286" y="45.666666666666657" width="189.33333333333337" height="42.333333333333343"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <color key="textColor" name="SplashTitle"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="en0-sM-kJ4"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
+                        <color key="backgroundColor" name="SplashTitle"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="2a0-jr-WLA" secondAttribute="bottom" id="14B-x3-1EX"/>
+                            <constraint firstItem="2a0-jr-WLA" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" id="BJr-Xb-Rh1"/>
+                            <constraint firstItem="2a0-jr-WLA" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="C6p-yf-kk9"/>
+                            <constraint firstItem="2a0-jr-WLA" firstAttribute="trailing" secondItem="Bcu-3y-fUS" secondAttribute="trailing" id="DPO-NL-cfH"/>
+                            <constraint firstItem="2a0-jr-WLA" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="O6d-UJ-734"/>
+                            <constraint firstItem="ESX-pi-E7B" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Pzo-sP-nAL"/>
+                            <constraint firstItem="ESX-pi-E7B" firstAttribute="top" secondItem="Bcu-3y-fUS" secondAttribute="top" constant="50" id="Vy7-f9-vsu"/>
+                            <constraint firstAttribute="bottom" secondItem="2a0-jr-WLA" secondAttribute="bottom" id="dM4-DI-flL"/>
+                            <constraint firstItem="2a0-jr-WLA" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" id="ll0-sE-ZHZ"/>
+                            <constraint firstItem="2a0-jr-WLA" firstAttribute="trailing" secondItem="Bcu-3y-fUS" secondAttribute="trailing" id="raR-xl-6Ii"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52.173913043478265" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="QuranBG" width="375" height="812"/>
+        <namedColor name="SplashTitle">
+            <color red="0.88599997758865356" green="0.96100002527236938" blue="0.94900000095367432" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>

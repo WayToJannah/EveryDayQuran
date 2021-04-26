@@ -9,9 +9,19 @@ import SwiftUI
 
 struct ContentView: View {
     @State var showSplash = true
+    
+    init() {
+        UITabBar.appearance().barTintColor = UIColor.white
+    }
     var body: some View {
         ZStack{
-          Text("hELLO World")
+            TabView {
+                HomeView()
+                    .tabItem {  Image("Quran") }
+                SurahDetailViewHeader()
+                    .tabItem {  Image(systemName: "gear")  }
+            }
+         
             .edgesIgnoringSafeArea(.all)
           SplashScreen()
             .opacity(showSplash ? 1 : 0)

@@ -16,6 +16,18 @@
 		C7DA5B032636E88D0021EACC /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DA5B022636E88D0021EACC /* SplashScreen.swift */; };
 		C7DA5B0A2636F14C0021EACC /* PoppinsBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C7DA5B082636F14C0021EACC /* PoppinsBold.ttf */; };
 		C7DA5B0B2636F14C0021EACC /* PoppinsRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C7DA5B092636F14C0021EACC /* PoppinsRegular.ttf */; };
+		C7EF89DA2637200C0051CEA4 /* SurahTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF89D92637200C0051CEA4 /* SurahTitleView.swift */; };
+		C7EF89DF263722100051CEA4 /* PoppinsSemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C7EF89DE263722100051CEA4 /* PoppinsSemiBold.ttf */; };
+		C7EF89E8263723D50051CEA4 /* Amiri-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C7EF89E6263723D50051CEA4 /* Amiri-Regular.ttf */; };
+		C7EF89E9263723D50051CEA4 /* Amiri-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C7EF89E7263723D50051CEA4 /* Amiri-Bold.ttf */; };
+		C7EF89EE263727100051CEA4 /* HomeViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF89ED263727100051CEA4 /* HomeViewHeader.swift */; };
+		C7EF89F326372B420051CEA4 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF89F226372B420051CEA4 /* HomeView.swift */; };
+		C7EF8A072637309D0051CEA4 /* HeaderTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF8A062637309D0051CEA4 /* HeaderTab.swift */; };
+		C7EF8A0C263730A90051CEA4 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7EF8A0B263730A90051CEA4 /* Launch Screen.storyboard */; };
+		C7EF8A1426374FA20051CEA4 /* SurahDetailViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF8A1326374FA20051CEA4 /* SurahDetailViewHeader.swift */; };
+		C7EF8A192637685E0051CEA4 /* Color+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF8A182637685D0051CEA4 /* Color+Ex.swift */; };
+		C7EF8A1E26376A060051CEA4 /* AyahView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF8A1D26376A060051CEA4 /* AyahView.swift */; };
+		C7EF8A23263773F60051CEA4 /* SurahDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF8A22263773F60051CEA4 /* SurahDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +63,18 @@
 		C7DA5B022636E88D0021EACC /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		C7DA5B082636F14C0021EACC /* PoppinsBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PoppinsBold.ttf; sourceTree = "<group>"; };
 		C7DA5B092636F14C0021EACC /* PoppinsRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PoppinsRegular.ttf; sourceTree = "<group>"; };
+		C7EF89D92637200C0051CEA4 /* SurahTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurahTitleView.swift; sourceTree = "<group>"; };
+		C7EF89DE263722100051CEA4 /* PoppinsSemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PoppinsSemiBold.ttf; sourceTree = "<group>"; };
+		C7EF89E6263723D50051CEA4 /* Amiri-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Amiri-Regular.ttf"; sourceTree = "<group>"; };
+		C7EF89E7263723D50051CEA4 /* Amiri-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Amiri-Bold.ttf"; sourceTree = "<group>"; };
+		C7EF89ED263727100051CEA4 /* HomeViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewHeader.swift; sourceTree = "<group>"; };
+		C7EF89F226372B420051CEA4 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		C7EF8A062637309D0051CEA4 /* HeaderTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTab.swift; sourceTree = "<group>"; };
+		C7EF8A0B263730A90051CEA4 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		C7EF8A1326374FA20051CEA4 /* SurahDetailViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurahDetailViewHeader.swift; sourceTree = "<group>"; };
+		C7EF8A182637685D0051CEA4 /* Color+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ex.swift"; sourceTree = "<group>"; };
+		C7EF8A1D26376A060051CEA4 /* AyahView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AyahView.swift; sourceTree = "<group>"; };
+		C7EF8A22263773F60051CEA4 /* SurahDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurahDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,13 +125,14 @@
 		C7DA5AD22636E4DF0021EACC /* EverydayQuran */ = {
 			isa = PBXGroup;
 			children = (
+				C7EF89F726372FA70051CEA4 /* Screen */,
 				C7DA5B072636F1410021EACC /* Font */,
 				C7DA5AD32636E4DF0021EACC /* EverydayQuranApp.swift */,
 				C7DA5AD52636E4DF0021EACC /* ContentView.swift */,
 				C7DA5AD72636E4E10021EACC /* Assets.xcassets */,
 				C7DA5ADC2636E4E10021EACC /* Info.plist */,
 				C7DA5AD92636E4E10021EACC /* Preview Content */,
-				C7DA5B022636E88D0021EACC /* SplashScreen.swift */,
+				C7EF8A182637685D0051CEA4 /* Color+Ex.swift */,
 			);
 			path = EverydayQuran;
 			sourceTree = "<group>";
@@ -141,10 +166,29 @@
 		C7DA5B072636F1410021EACC /* Font */ = {
 			isa = PBXGroup;
 			children = (
+				C7EF89E7263723D50051CEA4 /* Amiri-Bold.ttf */,
+				C7EF89E6263723D50051CEA4 /* Amiri-Regular.ttf */,
+				C7EF89DE263722100051CEA4 /* PoppinsSemiBold.ttf */,
 				C7DA5B082636F14C0021EACC /* PoppinsBold.ttf */,
 				C7DA5B092636F14C0021EACC /* PoppinsRegular.ttf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		C7EF89F726372FA70051CEA4 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				C7DA5B022636E88D0021EACC /* SplashScreen.swift */,
+				C7EF89D92637200C0051CEA4 /* SurahTitleView.swift */,
+				C7EF89ED263727100051CEA4 /* HomeViewHeader.swift */,
+				C7EF89F226372B420051CEA4 /* HomeView.swift */,
+				C7EF8A062637309D0051CEA4 /* HeaderTab.swift */,
+				C7EF8A0B263730A90051CEA4 /* Launch Screen.storyboard */,
+				C7EF8A1326374FA20051CEA4 /* SurahDetailViewHeader.swift */,
+				C7EF8A1D26376A060051CEA4 /* AyahView.swift */,
+				C7EF8A22263773F60051CEA4 /* SurahDetailView.swift */,
+			);
+			path = Screen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,9 +294,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7EF89DF263722100051CEA4 /* PoppinsSemiBold.ttf in Resources */,
 				C7DA5ADB2636E4E10021EACC /* Preview Assets.xcassets in Resources */,
+				C7EF8A0C263730A90051CEA4 /* Launch Screen.storyboard in Resources */,
+				C7EF89E8263723D50051CEA4 /* Amiri-Regular.ttf in Resources */,
 				C7DA5B0A2636F14C0021EACC /* PoppinsBold.ttf in Resources */,
 				C7DA5AD82636E4E10021EACC /* Assets.xcassets in Resources */,
+				C7EF89E9263723D50051CEA4 /* Amiri-Bold.ttf in Resources */,
 				C7DA5B0B2636F14C0021EACC /* PoppinsRegular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,9 +326,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7EF8A1426374FA20051CEA4 /* SurahDetailViewHeader.swift in Sources */,
 				C7DA5B032636E88D0021EACC /* SplashScreen.swift in Sources */,
+				C7EF8A23263773F60051CEA4 /* SurahDetailView.swift in Sources */,
+				C7EF8A192637685E0051CEA4 /* Color+Ex.swift in Sources */,
+				C7EF89EE263727100051CEA4 /* HomeViewHeader.swift in Sources */,
 				C7DA5AD62636E4DF0021EACC /* ContentView.swift in Sources */,
+				C7EF89F326372B420051CEA4 /* HomeView.swift in Sources */,
+				C7EF8A072637309D0051CEA4 /* HeaderTab.swift in Sources */,
+				C7EF8A1E26376A060051CEA4 /* AyahView.swift in Sources */,
 				C7DA5AD42636E4DF0021EACC /* EverydayQuranApp.swift in Sources */,
+				C7EF89DA2637200C0051CEA4 /* SurahTitleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

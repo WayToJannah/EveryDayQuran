@@ -13,7 +13,7 @@ struct SplashScreen: View {
             VStack(alignment: .center, spacing: 10) {
                 Spacer()
                 Spacer()
-                Text("Quran App").font(.custom("Poppins Bold", size: geometry.size.height * 0.039)).foregroundColor(Color("SplashTitle")).multilineTextAlignment(.center)
+                Text("EveryDay Quran").font(.custom("Poppins Bold", size: geometry.size.height * 0.039)).fontWeight(.heavy).foregroundColor(Color("SplashTitle")).multilineTextAlignment(.center)
                     .shadow(radius: 20)
                 HStack {
                     Spacer()
@@ -28,7 +28,7 @@ struct SplashScreen: View {
                 Spacer()
                 Spacer()
                 Button(action: {print("hi")}, label: {
-                    Text("Get Started").font(.custom("Poppins SemiBold", size: 18)).foregroundColor(Color("GetStarted")).multilineTextAlignment(.center)
+                    Text("Get Started").font(.custom("PoppinsSemiBold", size: 18)).fontWeight(.heavy).foregroundColor(Color("GetStarted")).multilineTextAlignment(.center)
                         .background(RoundedRectangle(cornerRadius: 10).fill(Color.white)
                                     .frame(width: geometry.size.width * 0.494, height: geometry.size.height * 0.073))
                         .shadow(radius: 20)
