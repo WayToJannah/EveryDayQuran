@@ -6,11 +6,13 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct AyahView: View {
     @Environment(\.appDatabase) var appDatabase
     var quran: Quran = Quran(id: 1, surahNo: 2, ayahNo: 1, ayah: "")
     @State var bookmark: Bookmark? = nil
+    @State var player: AVPlayer? = nil
     var body: some View {
         VStack(spacing: 10) {
             ZStack {
@@ -28,8 +30,19 @@ struct AyahView: View {
                         Image("ShareAyah")
                     })
                     .buttonStyle(BorderlessButtonStyle())
-                    Button(action: {}, label: {
+                    Button(action: {
+                        if player == nil {
+                            loadAudio(id: quran.surahNo)
+                            player?.play()
+                        } else if player?.rate == 0 {
+                            player?.play()
+                        } else {
+                            player?.pause()
+                        }
+                       
+                    }, label: {
                         Image("PlayAyah")
+                            
                     })
                     .buttonStyle(BorderlessButtonStyle())
                     Button(action: {
@@ -74,7 +87,7 @@ struct AyahView: View {
             }
             HStack {
                 Text(quran.other)
-                    .font(.custom("PoppinsSemiBold", size: 20, relativeTo: .headline))
+                    .font(.custom("PoppinsSemiBold", size: 17, relativeTo: .headline))
                     .lineSpacing(7)
                     .fixedSize(horizontal: false, vertical: true)
                 Spacer()
@@ -94,6 +107,14 @@ struct AyahView: View {
         Rectangle()
             .frame(height: 50)
             .foregroundColor(Color("AyahHeader"))
+    }
+    
+    func loadAudio(id: Int) {
+        guard let url = URL.init(string: "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/\(String(format:"%03d", id)).mp3") else { return }
+        let playerItem = AVPlayerItem.init(url: url)
+        player = AVPlayer.init(playerItem: playerItem)
+        
+        
     }
 }
 
