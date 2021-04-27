@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		332D563FBF3DA26E7B8E6FD9 /* Pods_EverydayQuran.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74CED15AB96FEE57552C89CD /* Pods_EverydayQuran.framework */; };
+		9FFE282112D4333EB5287A38 /* Pods_EverydayQuran_EverydayQuranUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBCEFF9871AA14688B44F40E /* Pods_EverydayQuran_EverydayQuranUITests.framework */; };
+		B44083B526E5178B2CE3D232 /* Pods_EverydayQuranTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C45F27476444912BB910A2A /* Pods_EverydayQuranTests.framework */; };
 		C7DA5AD42636E4DF0021EACC /* EverydayQuranApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DA5AD32636E4DF0021EACC /* EverydayQuranApp.swift */; };
 		C7DA5AD62636E4DF0021EACC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DA5AD52636E4DF0021EACC /* ContentView.swift */; };
 		C7DA5AD82636E4E10021EACC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7DA5AD72636E4E10021EACC /* Assets.xcassets */; };
@@ -49,6 +52,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C45F27476444912BB910A2A /* Pods_EverydayQuranTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EverydayQuranTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		47D40EECF0B013FE403C0139 /* Pods-EverydayQuran.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverydayQuran.debug.xcconfig"; path = "Target Support Files/Pods-EverydayQuran/Pods-EverydayQuran.debug.xcconfig"; sourceTree = "<group>"; };
+		53FF939BA08B420A65F0A2DC /* Pods-EverydayQuranTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverydayQuranTests.release.xcconfig"; path = "Target Support Files/Pods-EverydayQuranTests/Pods-EverydayQuranTests.release.xcconfig"; sourceTree = "<group>"; };
+		709AFDF2309254A1CC21101B /* Pods-EverydayQuran-EverydayQuranUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverydayQuran-EverydayQuranUITests.release.xcconfig"; path = "Target Support Files/Pods-EverydayQuran-EverydayQuranUITests/Pods-EverydayQuran-EverydayQuranUITests.release.xcconfig"; sourceTree = "<group>"; };
+		74CED15AB96FEE57552C89CD /* Pods_EverydayQuran.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EverydayQuran.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8266A6A88B9ABCF9BAC411C7 /* Pods-EverydayQuranTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverydayQuranTests.debug.xcconfig"; path = "Target Support Files/Pods-EverydayQuranTests/Pods-EverydayQuranTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BA122C0AD1CFE7908FE8EC67 /* Pods-EverydayQuran.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverydayQuran.release.xcconfig"; path = "Target Support Files/Pods-EverydayQuran/Pods-EverydayQuran.release.xcconfig"; sourceTree = "<group>"; };
 		C7DA5AD02636E4DF0021EACC /* EverydayQuran.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EverydayQuran.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7DA5AD32636E4DF0021EACC /* EverydayQuranApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverydayQuranApp.swift; sourceTree = "<group>"; };
 		C7DA5AD52636E4DF0021EACC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -77,6 +87,8 @@
 		C7EF8A1D26376A060051CEA4 /* AyahView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AyahView.swift; sourceTree = "<group>"; };
 		C7EF8A22263773F60051CEA4 /* SurahDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurahDetailView.swift; sourceTree = "<group>"; };
 		C7EF8A282637927C0051CEA4 /* quran.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = quran.sqlite; sourceTree = "<group>"; };
+		D0977E25ADA2C2D8D65123D1 /* Pods-EverydayQuran-EverydayQuranUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverydayQuran-EverydayQuranUITests.debug.xcconfig"; path = "Target Support Files/Pods-EverydayQuran-EverydayQuranUITests/Pods-EverydayQuran-EverydayQuranUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		FBCEFF9871AA14688B44F40E /* Pods_EverydayQuran_EverydayQuranUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EverydayQuran_EverydayQuranUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				332D563FBF3DA26E7B8E6FD9 /* Pods_EverydayQuran.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B44083B526E5178B2CE3D232 /* Pods_EverydayQuranTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,12 +112,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FFE282112D4333EB5287A38 /* Pods_EverydayQuran_EverydayQuranUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A376AB5A889EF31FD6BC0FD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				74CED15AB96FEE57552C89CD /* Pods_EverydayQuran.framework */,
+				FBCEFF9871AA14688B44F40E /* Pods_EverydayQuran_EverydayQuranUITests.framework */,
+				1C45F27476444912BB910A2A /* Pods_EverydayQuranTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		69116FBCE11150B593BC488F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				47D40EECF0B013FE403C0139 /* Pods-EverydayQuran.debug.xcconfig */,
+				BA122C0AD1CFE7908FE8EC67 /* Pods-EverydayQuran.release.xcconfig */,
+				D0977E25ADA2C2D8D65123D1 /* Pods-EverydayQuran-EverydayQuranUITests.debug.xcconfig */,
+				709AFDF2309254A1CC21101B /* Pods-EverydayQuran-EverydayQuranUITests.release.xcconfig */,
+				8266A6A88B9ABCF9BAC411C7 /* Pods-EverydayQuranTests.debug.xcconfig */,
+				53FF939BA08B420A65F0A2DC /* Pods-EverydayQuranTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		C7DA5AC72636E4DF0021EACC = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +150,8 @@
 				C7DA5AE42636E4E30021EACC /* EverydayQuranTests */,
 				C7DA5AEF2636E4E30021EACC /* EverydayQuranUITests */,
 				C7DA5AD12636E4DF0021EACC /* Products */,
+				69116FBCE11150B593BC488F /* Pods */,
+				3A376AB5A889EF31FD6BC0FD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -209,9 +250,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C7DA5AF52636E4E30021EACC /* Build configuration list for PBXNativeTarget "EverydayQuran" */;
 			buildPhases = (
+				DE22A83A695FB8D917418CCF /* [CP] Check Pods Manifest.lock */,
 				C7DA5ACC2636E4DF0021EACC /* Sources */,
 				C7DA5ACD2636E4DF0021EACC /* Frameworks */,
 				C7DA5ACE2636E4DF0021EACC /* Resources */,
+				455FFFC9892D1032BEB00E44 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -226,6 +269,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C7DA5AF82636E4E30021EACC /* Build configuration list for PBXNativeTarget "EverydayQuranTests" */;
 			buildPhases = (
+				5E27E93AC1705EDB26D5A9C7 /* [CP] Check Pods Manifest.lock */,
 				C7DA5ADD2636E4E30021EACC /* Sources */,
 				C7DA5ADE2636E4E30021EACC /* Frameworks */,
 				C7DA5ADF2636E4E30021EACC /* Resources */,
@@ -244,9 +288,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C7DA5AFB2636E4E30021EACC /* Build configuration list for PBXNativeTarget "EverydayQuranUITests" */;
 			buildPhases = (
+				82402CC84CF9757240092B85 /* [CP] Check Pods Manifest.lock */,
 				C7DA5AE82636E4E30021EACC /* Sources */,
 				C7DA5AE92636E4E30021EACC /* Frameworks */,
 				C7DA5AEA2636E4E30021EACC /* Resources */,
+				6CECE70C7330575ED9333C14 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -332,6 +378,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		455FFFC9892D1032BEB00E44 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EverydayQuran/Pods-EverydayQuran-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EverydayQuran/Pods-EverydayQuran-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EverydayQuran/Pods-EverydayQuran-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5E27E93AC1705EDB26D5A9C7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EverydayQuranTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6CECE70C7330575ED9333C14 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EverydayQuran-EverydayQuranUITests/Pods-EverydayQuran-EverydayQuranUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EverydayQuran-EverydayQuranUITests/Pods-EverydayQuran-EverydayQuranUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EverydayQuran-EverydayQuranUITests/Pods-EverydayQuran-EverydayQuranUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		82402CC84CF9757240092B85 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EverydayQuran-EverydayQuranUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DE22A83A695FB8D917418CCF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EverydayQuran-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C7DA5ACC2636E4DF0021EACC /* Sources */ = {
@@ -502,6 +651,7 @@
 		};
 		C7DA5AF62636E4E30021EACC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 47D40EECF0B013FE403C0139 /* Pods-EverydayQuran.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -524,6 +674,7 @@
 		};
 		C7DA5AF72636E4E30021EACC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA122C0AD1CFE7908FE8EC67 /* Pods-EverydayQuran.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -546,6 +697,7 @@
 		};
 		C7DA5AF92636E4E30021EACC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8266A6A88B9ABCF9BAC411C7 /* Pods-EverydayQuranTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -568,6 +720,7 @@
 		};
 		C7DA5AFA2636E4E30021EACC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53FF939BA08B420A65F0A2DC /* Pods-EverydayQuranTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -590,6 +743,7 @@
 		};
 		C7DA5AFC2636E4E30021EACC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0977E25ADA2C2D8D65123D1 /* Pods-EverydayQuran-EverydayQuranUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -610,6 +764,7 @@
 		};
 		C7DA5AFD2636E4E30021EACC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 709AFDF2309254A1CC21101B /* Pods-EverydayQuran-EverydayQuranUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
