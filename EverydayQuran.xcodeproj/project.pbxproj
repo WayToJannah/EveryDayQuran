@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -32,6 +32,12 @@
 		C7EF8A1E26376A060051CEA4 /* AyahView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF8A1D26376A060051CEA4 /* AyahView.swift */; };
 		C7EF8A23263773F60051CEA4 /* SurahDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF8A22263773F60051CEA4 /* SurahDetailView.swift */; };
 		C7EF8A292637927C0051CEA4 /* quran.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = C7EF8A282637927C0051CEA4 /* quran.sqlite */; };
+		C7EF8A3B263847010051CEA4 /* Quran.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF8A3A263847010051CEA4 /* Quran.swift */; };
+		C7EF8A4526384CEF0051CEA4 /* AppDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF8A4426384CEF0051CEA4 /* AppDatabase.swift */; };
+		C7EF8A4E263860CE0051CEA4 /* Persistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF8A4D263860CE0051CEA4 /* Persistance.swift */; };
+		C7EF8A53263869430051CEA4 /* QuranRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF8A52263869430051CEA4 /* QuranRequest.swift */; };
+		C7EF8A5826386A6B0051CEA4 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF8A5726386A6B0051CEA4 /* Query.swift */; };
+		C7EF8A6026387E2D0051CEA4 /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF8A5F26387E2D0051CEA4 /* Bookmark.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +93,13 @@
 		C7EF8A1D26376A060051CEA4 /* AyahView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AyahView.swift; sourceTree = "<group>"; };
 		C7EF8A22263773F60051CEA4 /* SurahDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurahDetailView.swift; sourceTree = "<group>"; };
 		C7EF8A282637927C0051CEA4 /* quran.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = quran.sqlite; sourceTree = "<group>"; };
+		C7EF8A3A263847010051CEA4 /* Quran.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quran.swift; sourceTree = "<group>"; };
+		C7EF8A4426384CEF0051CEA4 /* AppDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDatabase.swift; sourceTree = "<group>"; };
+		C7EF8A4D263860CE0051CEA4 /* Persistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistance.swift; sourceTree = "<group>"; };
+		C7EF8A52263869430051CEA4 /* QuranRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuranRequest.swift; sourceTree = "<group>"; };
+		C7EF8A5726386A6B0051CEA4 /* Query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
+		C7EF8A5F26387E2D0051CEA4 /* Bookmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookmark.swift; sourceTree = "<group>"; };
+		C7EF8A6426389A430051CEA4 /* me_quran.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = me_quran.ttf; sourceTree = "<group>"; };
 		D0977E25ADA2C2D8D65123D1 /* Pods-EverydayQuran-EverydayQuranUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverydayQuran-EverydayQuranUITests.debug.xcconfig"; path = "Target Support Files/Pods-EverydayQuran-EverydayQuranUITests/Pods-EverydayQuran-EverydayQuranUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		FBCEFF9871AA14688B44F40E /* Pods_EverydayQuran_EverydayQuranUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EverydayQuran_EverydayQuranUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -139,7 +152,6 @@
 				8266A6A88B9ABCF9BAC411C7 /* Pods-EverydayQuranTests.debug.xcconfig */,
 				53FF939BA08B420A65F0A2DC /* Pods-EverydayQuranTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -168,15 +180,15 @@
 		C7DA5AD22636E4DF0021EACC /* EverydayQuran */ = {
 			isa = PBXGroup;
 			children = (
+				C7EF8A4326384CD70051CEA4 /* App */,
 				C7EF8A272637926A0051CEA4 /* Database */,
 				C7EF89F726372FA70051CEA4 /* Screen */,
 				C7DA5B072636F1410021EACC /* Font */,
-				C7DA5AD32636E4DF0021EACC /* EverydayQuranApp.swift */,
-				C7DA5AD52636E4DF0021EACC /* ContentView.swift */,
 				C7DA5AD72636E4E10021EACC /* Assets.xcassets */,
 				C7DA5ADC2636E4E10021EACC /* Info.plist */,
 				C7DA5AD92636E4E10021EACC /* Preview Content */,
 				C7EF8A182637685D0051CEA4 /* Color+Ex.swift */,
+				C7EF8A3F263847060051CEA4 /* Model */,
 			);
 			path = EverydayQuran;
 			sourceTree = "<group>";
@@ -210,6 +222,7 @@
 		C7DA5B072636F1410021EACC /* Font */ = {
 			isa = PBXGroup;
 			children = (
+				C7EF8A6426389A430051CEA4 /* me_quran.ttf */,
 				C7EF89E7263723D50051CEA4 /* Amiri-Bold.ttf */,
 				C7EF89E6263723D50051CEA4 /* Amiri-Regular.ttf */,
 				C7EF89DE263722100051CEA4 /* PoppinsSemiBold.ttf */,
@@ -241,6 +254,28 @@
 				C7EF8A282637927C0051CEA4 /* quran.sqlite */,
 			);
 			path = Database;
+			sourceTree = "<group>";
+		};
+		C7EF8A3F263847060051CEA4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C7EF8A3A263847010051CEA4 /* Quran.swift */,
+				C7EF8A52263869430051CEA4 /* QuranRequest.swift */,
+				C7EF8A5726386A6B0051CEA4 /* Query.swift */,
+				C7EF8A5F26387E2D0051CEA4 /* Bookmark.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C7EF8A4326384CD70051CEA4 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				C7DA5AD32636E4DF0021EACC /* EverydayQuranApp.swift */,
+				C7DA5AD52636E4DF0021EACC /* ContentView.swift */,
+				C7EF8A4426384CEF0051CEA4 /* AppDatabase.swift */,
+				C7EF8A4D263860CE0051CEA4 /* Persistance.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -488,11 +523,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7EF8A1426374FA20051CEA4 /* SurahDetailViewHeader.swift in Sources */,
+				C7EF8A3B263847010051CEA4 /* Quran.swift in Sources */,
 				C7DA5B032636E88D0021EACC /* SplashScreen.swift in Sources */,
 				C7EF8A23263773F60051CEA4 /* SurahDetailView.swift in Sources */,
+				C7EF8A5826386A6B0051CEA4 /* Query.swift in Sources */,
+				C7EF8A6026387E2D0051CEA4 /* Bookmark.swift in Sources */,
 				C7EF8A192637685E0051CEA4 /* Color+Ex.swift in Sources */,
 				C7EF89EE263727100051CEA4 /* HomeViewHeader.swift in Sources */,
+				C7EF8A4526384CEF0051CEA4 /* AppDatabase.swift in Sources */,
+				C7EF8A4E263860CE0051CEA4 /* Persistance.swift in Sources */,
 				C7DA5AD62636E4DF0021EACC /* ContentView.swift in Sources */,
+				C7EF8A53263869430051CEA4 /* QuranRequest.swift in Sources */,
 				C7EF89F326372B420051CEA4 /* HomeView.swift in Sources */,
 				C7EF8A072637309D0051CEA4 /* HeaderTab.swift in Sources */,
 				C7EF8A1E26376A060051CEA4 /* AyahView.swift in Sources */,
