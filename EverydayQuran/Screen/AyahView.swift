@@ -6,8 +6,10 @@
 //
 
 import SwiftUI
+import AttributedText
 
 struct AyahView: View {
+    @Environment(\.colorScheme) var colorScheme: ColorScheme
     var ayahNumber: String = "1"
     var body: some View {
         VStack(spacing: 10) {
@@ -42,13 +44,22 @@ struct AyahView: View {
             .padding(.bottom, 10)
             HStack {
                 Spacer()
-                Text("َﻦﻳِمَلٰعْلا ِّبَر ِهَّلِل ُدْمَحْلا")
-                    .font(.custom("Amiri-Regular", size: 20, relativeTo: .title3))
-                    .foregroundColor(.black)
-                    .fixedSize(horizontal: false, vertical: true)
+                
+                if colorScheme == .dark {
+                    AttributedText(TajweedText.tajweedTexr(for: "۞ قُلْ أَؤُنَبِّئُكُم بِخَيْرٍۢ مِّن ذَٰلِكُمْ ۚ لِلَّذِينَ ٱتَّقَوْا۟ عِندَ رَبِّهِمْ جَنَّـٰتٌۭ تَجْرِى مِن تَحْتِهَا ٱلْأَنْهَـٰرُ خَـٰلِدِينَ فِيهَا وَأَزْوَٰجٌۭ مُّطَهَّرَةٌۭ وَرِضْوَٰنٌۭ مِّنَ ٱللَّهِ ۗ وَٱللَّهُ بَصِيرٌۢ بِٱلْعِبَادِ", isDark: true))
+                    .foregroundColor(.white)
+                } else {
+                    AttributedText(TajweedText.tajweedTexr(for: "۞ قُلْ أَؤُنَبِّئُكُم بِخَيْرٍۢ مِّن ذَٰلِكُمْ ۚ لِلَّذِينَ ٱتَّقَوْا۟ عِندَ رَبِّهِمْ جَنَّـٰتٌۭ تَجْرِى مِن تَحْتِهَا ٱلْأَنْهَـٰرُ خَـٰلِدِينَ فِيهَا وَأَزْوَٰجٌۭ مُّطَهَّرَةٌۭ وَرِضْوَٰنٌۭ مِّنَ ٱللَّهِ ۗ وَٱللَّهُ بَصِيرٌۢ بِٱلْعِبَادِ"))
+                        .foregroundColor(.black)
+                }
+                        
+                       
+                
+                   
+                    
             }
-            Text("[All] praise is [due] to Allah, Lord of the worlds -")
-                .font(.custom("PoppinsSemiBold", size: 20, relativeTo: .headline))
+            Text("Say: \"Shall I tell you of (things) even better? With the Lord are gardens with running streams of water for those who keep from evil and follow the straight path, where they will live unchanged with the purest of companions and blessings of God.\" And under God's eyes are devotees")
+                .font(.custom("PoppinsSemiBold", size: 17, relativeTo: .headline))
                 .fixedSize(horizontal: false, vertical: true)
                   
         }
@@ -65,6 +76,14 @@ struct AyahView: View {
 
 struct AyahView_Previews: PreviewProvider {
     static var previews: some View {
-        AyahView()
+        Group {
+            AyahView()
+            AyahView()
+                .preferredColorScheme(.dark)
+                
+                
+                
+           
+        }
     }
 }
