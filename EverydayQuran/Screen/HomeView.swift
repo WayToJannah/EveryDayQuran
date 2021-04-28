@@ -60,8 +60,8 @@ struct HomeView: View {
                     ScrollView {
                         LazyVStack {
                             ForEach(surahTitle) { content in
-                                NavigationLink(destination: SurahDetailView()) {
-                                    SurahTitleView(height:geometry.size.height * 0.096 ,surahNo: String(content.id))
+                                NavigationLink(destination: SurahDetailView(surahNo: content.id)) {
+                                    SurahTitleView(height:geometry.size.height * 0.096 ,surahNo: String(content.id), surahArabicName: content.ayah)
                                 }
                             }
                             
@@ -116,8 +116,8 @@ struct HomeView: View {
         appDatabase?.quranReader.asyncRead { dbResult  in
             let db = try! dbResult.get()
             var surahTitle = [Quran]()
-            try! Row.fetchAll(db, sql: "SELECT id, surah_no, ayah_no, ayah FROM quran_uthmani where surah_no  = 114").forEach {
-                surahTitle.append( Quran(id: $0["id"], surahNo: $0["surah_no"], ayahNo: $0["ayah_no"], ayah: $0["ayah"]))
+            try! Row.fetchAll(db, sql: "SELECT id, arabic FROM surah_names").forEach {
+                surahTitle.append( Quran(id: $0["id"], ayah: $0["arabic"]))
             }
             self.surahTitle = surahTitle
             print(surahTitle)

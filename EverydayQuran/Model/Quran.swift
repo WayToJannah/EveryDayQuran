@@ -9,9 +9,9 @@ import GRDB
 
 struct Quran: Identifiable {
     var id: Int
-    var surahNo: Int
-    var ayahNo: Int
-    var ayah: String
+    var surahNo: Int = 1
+    var ayahNo: Int = 1
+    var ayah: String = ""
     var other: String = ""
 }
 

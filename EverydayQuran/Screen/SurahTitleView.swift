@@ -10,6 +10,7 @@ import SwiftUI
 struct SurahTitleView: View {
     var height: CGFloat = 78
     var surahNo: String = "1"
+    var surahArabicName: String = "ناﺮﻤﻋ لآ"
     var body: some View {
         HStack {
                 ZStack {
@@ -29,7 +30,7 @@ struct SurahTitleView: View {
                     .font(.subheadline)
             }
             Spacer()
-            Text("ناﺮﻤﻋ لآ")
+            Text(surahArabicName)
                 .font(.custom("Amiri-Regular", size: 20, relativeTo: .title3))
                 .foregroundColor(Color("Subtitle"))
             
