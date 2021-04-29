@@ -52,10 +52,10 @@ struct TajweedText {
                                             }()], range: NSRange(location: 0, length: attributedString.length))
         }
         
-        for i in 0..<patterns.count {
-            switch patterns[i] {
+        for pattern in patterns {
+            switch pattern {
             case .ghunnah:
-                let regex = try! NSRegularExpression(pattern: patterns[i].rawValue, options: .anchorsMatchLines)
+                let regex = try! NSRegularExpression(pattern: Pattern.ghunnah.rawValue, options: .anchorsMatchLines)
                 let matches = regex.matches(in: string, options: [], range: NSMakeRange(0, attributedString.length))
                 for match in matches {
                     var wordRange = match.range(at: 0)
@@ -68,7 +68,7 @@ struct TajweedText {
                     print("----" )
                     print("----" )
                     print("----" )
-                    wordRange = NSRange(location: wordRange.location, length: wordRange.length + 1)
+                    wordRange = NSRange(location: wordRange.location, length: wordRange.length + rangeModifierFour(string: string, index: wordRange.location + wordRange.length))
                     print("----" )
                     print("----" )
                     print("----" )
@@ -78,31 +78,47 @@ struct TajweedText {
                     print("----" )
                     print("----" )
                     print("----" )
-                   attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.init(tajweedColors[i]), range: wordRange)
+                    attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.init(colorGhunna), range: wordRange)
                 }
             case .qalqala:
-                let regex = try! NSRegularExpression(pattern: patterns[i].rawValue, options: .anchorsMatchLines)
+                let regex = try! NSRegularExpression(pattern: Pattern.qalqala.rawValue, options: .anchorsMatchLines)
                 let matches = regex.matches(in: string, options: [], range: NSMakeRange(0, attributedString.length))
                 for match in matches {
                     let wordRange = match.range(at: 0)
-                    attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.init(tajweedColors[i]), range: wordRange)
+                    attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.init(colorQalqala), range: wordRange)
                 }
             case .iqlab:
-                let regex = try! NSRegularExpression(pattern: patterns[i].rawValue, options: .anchorsMatchLines)
+                let regex = try! NSRegularExpression(pattern: Pattern.iqlab.rawValue, options: .anchorsMatchLines)
                 let matches = regex.matches(in: string, options: [], range: NSMakeRange(0, attributedString.length))
                 for match in matches {
                     var wordRange = match.range(at: 0)
                     //print("wordRange \(wordRange.lowerBound) - \(wordRange.upperBound)" )
-                    wordRange = NSRange(location: wordRange.location + rangeModifierThree(string: string, index: wordRange.location), length: wordRange.length + 1)
-                attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.init(tajweedColors[i]), range: wordRange)
+                    wordRange = NSRange(location: wordRange.location + rangeModifierFive(string: string, index: wordRange.location), length: wordRange.length + rangeModifierFour(string: string, index: wordRange.location + wordRange.length))
+                    attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.init(colorIqlab), range: wordRange)
                 }
-            case .idgham, .idghamwo, .ikhfa:
-                let regex = try! NSRegularExpression(pattern: patterns[i].rawValue, options: .anchorsMatchLines)
+            case .idgham:
+                let regex = try! NSRegularExpression(pattern: Pattern.idgham.rawValue, options: .anchorsMatchLines)
                 let matches = regex.matches(in: string, options: [], range: NSMakeRange(0, attributedString.length))
                 for match in matches {
                     var wordRange = match.range(at: 0)
                     wordRange = NSRange(location: wordRange.location + rangeModifierTwo(string: string, index: wordRange.location), length: wordRange.length + rangeModifierOne(string: string, index: wordRange.location + wordRange.length))
-                    attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.init(tajweedColors[i]), range: wordRange)
+                    attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.init(colorIdgham), range: wordRange)
+                }
+            case .idghamwo:
+                let regex = try! NSRegularExpression(pattern: Pattern.idghamwo.rawValue, options: .anchorsMatchLines)
+                let matches = regex.matches(in: string, options: [], range: NSMakeRange(0, attributedString.length))
+                for match in matches {
+                    var wordRange = match.range(at: 0)
+                    wordRange = NSRange(location: wordRange.location + rangeModifierTwo(string: string, index: wordRange.location), length: wordRange.length + rangeModifierFour(string: string, index: wordRange.location + wordRange.length))
+                    attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.init(colorIdghamwo), range: wordRange)
+                }
+            case  .ikhfa:
+                let regex = try! NSRegularExpression(pattern: Pattern.ikhfa.rawValue, options: .anchorsMatchLines)
+                let matches = regex.matches(in: string, options: [], range: NSMakeRange(0, attributedString.length))
+                for match in matches {
+                    var wordRange = match.range(at: 0)
+                    wordRange = NSRange(location: wordRange.location + rangeModifierTwo(string: string, index: wordRange.location), length: wordRange.length + rangeModifierFour(string: string, index: wordRange.location + wordRange.length))
+                    attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.init(colorIkhfa), range: wordRange)
                 }
             }
             
@@ -113,7 +129,7 @@ struct TajweedText {
     private static func rangeModifierOne(string: String, index: Int) -> Int {
         let string = NSString(string: string)
         let addedLength = string.character(at: index) == 1617 ? 2 : 1
-       // return NSRange(location: range.lowerBound, length: range.length + addedLength)
+        // return NSRange(location: range.lowerBound, length: range.length + addedLength)
         return addedLength
     }
     
@@ -122,6 +138,7 @@ struct TajweedText {
         let characterAt = string.character(at: index)
         var boolean1 = false
         var boolean2 = characterAt == 1611
+        //  boolean2 = (characterAt == 1611) | (characterAt == 1612)
         boolean2 = characterAt == 1612
         if characterAt == 1613 {
             boolean1 = true
@@ -134,9 +151,10 @@ struct TajweedText {
         return addedLength
         //        return NSRange(location: range.lowerBound, length: range.length + addedLength)
     }
-
+    
     private static func rangeModifierThree(string: String, index: Int) -> Int {
         let string = NSString(string: string)
+        var addedLength = -1
         let characterAt = string.character(at: index - 1)
         var boolean1 = false
         var boolean2 = characterAt == 1611
@@ -145,12 +163,45 @@ struct TajweedText {
             boolean1 = true
         }
         if boolean2 || boolean1 {
+            addedLength = -2
             if string.character(at: index - 2) == 1617 {
                 //                return NSRange(location: range.lowerBound, length: range.length - 3)
                 return   -3
             }
         }
         //        return NSRange(location: range.lowerBound, length: range.length - 1)
-        return  -1
+        return  addedLength
+    }
+    
+    /// ghuuna end, iqlab end, idgham end
+    private static func rangeModifierFour(string: String, index: Int) -> Int {
+        let string = NSString(string: string)
+        let characterAt = string.character(at: index)
+        if characterAt == 1617 {
+            return string.character(at: index + 2) == 1648 ?  3 : 2;
+        }
+        return string.character(at: index + 1) == 1648 || string.character(at: index + 1) == 1617 ? 2 : (true || string.character(at: index + 1) != 1619) ? 1 : 3
+    }
+    
+    
+    /// iqlab start
+    private static func rangeModifierFive(string: String, index: Int) -> Int {
+        let string = NSString(string: string)
+        let characterAt = string.character(at: index - 1)
+        if characterAt == 1613 || characterAt == 1611 {
+            if string.character(at: index - 2) == 1617 {
+                return -3
+            }
+        } else if !true {
+            return -2
+        }
+        if characterAt == 1612 {
+            if string.character(at: index - 2) == 1617 {
+                return -3
+            }
+        } else if !true {
+            return -2
+        }
+        return 0
     }
 }
