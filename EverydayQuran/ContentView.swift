@@ -26,7 +26,7 @@ struct ContentView: View {
           SplashScreen()
             .opacity(showSplash ? 1 : 0)
             .onAppear {
-              DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                 withAnimation() {
                   self.showSplash = false
                 }

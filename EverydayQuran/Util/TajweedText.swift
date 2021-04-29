@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Regex
 
 struct TajweedText {
     
@@ -55,10 +56,18 @@ struct TajweedText {
         for pattern in patterns {
             switch pattern {
             case .ghunnah:
-                let regex = try! NSRegularExpression(pattern: Pattern.ghunnah.rawValue, options: .anchorsMatchLines)
-                let matches = regex.matches(in: string, options: [], range: NSMakeRange(0, attributedString.length))
+//                let reg =  string =~ Pattern.ghunnah.rawValue
+//                print(reg)
+//                let regexd = try! Regex(pattern: Pattern.ghunnah.rawValue, groupNames: ["ghunnah"])
+//                let maf = regexd.findAll(in: string)
+//                for ma in maf {
+//                    ma.range(at: 0)
+//                }
+                
+                let regex = try! Regex(pattern: Pattern.ghunnah.rawValue, groupNames: ["ghunnah"])
+                let matches = regex.findAll(in: string)
                 for match in matches {
-                    var wordRange = match.range(at: 0)
+                    var wordRange = NSRange(match.range(at: 0)!, in: string)
                     print("----" )
                     print("----" )
                     print("----" )
@@ -78,6 +87,7 @@ struct TajweedText {
                     print("----" )
                     print("----" )
                     print("----" )
+                
                     attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.init(colorGhunna), range: wordRange)
                 }
             case .qalqala:
@@ -85,7 +95,7 @@ struct TajweedText {
                 let matches = regex.matches(in: string, options: [], range: NSMakeRange(0, attributedString.length))
                 for match in matches {
                     let wordRange = match.range(at: 0)
-                    attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.init(colorQalqala), range: wordRange)
+                    //      attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.init(colorQalqala), range: wordRange)
                 }
             case .iqlab:
                 let regex = try! NSRegularExpression(pattern: Pattern.iqlab.rawValue, options: .anchorsMatchLines)
@@ -94,7 +104,7 @@ struct TajweedText {
                     var wordRange = match.range(at: 0)
                     //print("wordRange \(wordRange.lowerBound) - \(wordRange.upperBound)" )
                     wordRange = NSRange(location: wordRange.location + rangeModifierFive(string: string, index: wordRange.location), length: wordRange.length + rangeModifierFour(string: string, index: wordRange.location + wordRange.length))
-                    attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.init(colorIqlab), range: wordRange)
+                    //     attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.init(colorIqlab), range: wordRange)
                 }
             case .idgham:
                 let regex = try! NSRegularExpression(pattern: Pattern.idgham.rawValue, options: .anchorsMatchLines)
@@ -102,7 +112,7 @@ struct TajweedText {
                 for match in matches {
                     var wordRange = match.range(at: 0)
                     wordRange = NSRange(location: wordRange.location + rangeModifierTwo(string: string, index: wordRange.location), length: wordRange.length + rangeModifierOne(string: string, index: wordRange.location + wordRange.length))
-                    attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.init(colorIdgham), range: wordRange)
+                    //    attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.init(colorIdgham), range: wordRange)
                 }
             case .idghamwo:
                 let regex = try! NSRegularExpression(pattern: Pattern.idghamwo.rawValue, options: .anchorsMatchLines)
@@ -110,7 +120,7 @@ struct TajweedText {
                 for match in matches {
                     var wordRange = match.range(at: 0)
                     wordRange = NSRange(location: wordRange.location + rangeModifierTwo(string: string, index: wordRange.location), length: wordRange.length + rangeModifierFour(string: string, index: wordRange.location + wordRange.length))
-                    attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.init(colorIdghamwo), range: wordRange)
+                    //      attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.init(colorIdghamwo), range: wordRange)
                 }
             case  .ikhfa:
                 let regex = try! NSRegularExpression(pattern: Pattern.ikhfa.rawValue, options: .anchorsMatchLines)
@@ -118,7 +128,7 @@ struct TajweedText {
                 for match in matches {
                     var wordRange = match.range(at: 0)
                     wordRange = NSRange(location: wordRange.location + rangeModifierTwo(string: string, index: wordRange.location), length: wordRange.length + rangeModifierFour(string: string, index: wordRange.location + wordRange.length))
-                    attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.init(colorIkhfa), range: wordRange)
+                    //   attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.init(colorIkhfa), range: wordRange)
                 }
             }
             

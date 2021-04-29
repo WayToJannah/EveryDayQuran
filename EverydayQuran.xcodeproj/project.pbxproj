@@ -13,6 +13,7 @@
 		C78139512639C4AA00307E9A /* AttributedText.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78139502639C4AA00307E9A /* AttributedText.swift */; };
 		C78139572639C53A00307E9A /* TajweedText.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78139562639C53A00307E9A /* TajweedText.swift */; };
 		C78139602639CAE000307E9A /* AttributedText in Frameworks */ = {isa = PBXBuildFile; productRef = C781395F2639CAE000307E9A /* AttributedText */; };
+		C781396A263AE97200307E9A /* Regex in Frameworks */ = {isa = PBXBuildFile; productRef = C7813969263AE97200307E9A /* Regex */; };
 		C7DA5AD42636E4DF0021EACC /* EverydayQuranApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DA5AD32636E4DF0021EACC /* EverydayQuranApp.swift */; };
 		C7DA5AD62636E4DF0021EACC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DA5AD52636E4DF0021EACC /* ContentView.swift */; };
 		C7DA5AD82636E4E10021EACC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7DA5AD72636E4E10021EACC /* Assets.xcassets */; };
@@ -101,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C781396A263AE97200307E9A /* Regex in Frameworks */,
 				332D563FBF3DA26E7B8E6FD9 /* Pods_EverydayQuran.framework in Frameworks */,
 				C78139602639CAE000307E9A /* AttributedText in Frameworks */,
 			);
@@ -286,6 +288,7 @@
 			name = EverydayQuran;
 			packageProductDependencies = (
 				C781395F2639CAE000307E9A /* AttributedText */,
+				C7813969263AE97200307E9A /* Regex */,
 			);
 			productName = EverydayQuran;
 			productReference = C7DA5AD02636E4DF0021EACC /* EverydayQuran.app */;
@@ -363,6 +366,7 @@
 			mainGroup = C7DA5AC72636E4DF0021EACC;
 			packageReferences = (
 				C781395E2639CAE000307E9A /* XCRemoteSwiftPackageReference "AttributedText" */,
+				C7813968263AE97100307E9A /* XCRemoteSwiftPackageReference "Regex" */,
 			);
 			productRefGroup = C7DA5AD12636E4DF0021EACC /* Products */;
 			projectDirPath = "";
@@ -864,6 +868,14 @@
 				minimumVersion = 0.3.0;
 			};
 		};
+		C7813968263AE97100307E9A /* XCRemoteSwiftPackageReference "Regex" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/crossroadlabs/Regex.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -871,6 +883,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C781395E2639CAE000307E9A /* XCRemoteSwiftPackageReference "AttributedText" */;
 			productName = AttributedText;
+		};
+		C7813969263AE97200307E9A /* Regex */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C7813968263AE97100307E9A /* XCRemoteSwiftPackageReference "Regex" */;
+			productName = Regex;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
