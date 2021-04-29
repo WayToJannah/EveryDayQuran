@@ -7,9 +7,11 @@
 
 import SwiftUI
 import AVFoundation
+import AttributedText
 
 struct AyahView: View {
     @Environment(\.appDatabase) var appDatabase
+    @State var attributedString: NSMutableAttributedString = NSMutableAttributedString(string: "")
     var quran: Quran = Quran(id: 1, surahNo: 2, ayahNo: 1, ayah: "")
     @State var bookmark: Bookmark? = nil
     @State var player: AVPlayer? = nil
@@ -79,11 +81,12 @@ struct AyahView: View {
             .padding(.bottom, 10)
             HStack {
                 Spacer()
-                Text(quran.ayah.replacingOccurrences(of: "بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ", with: "", options: .literal, range: nil))
-                    .font(.custom("me_quran", size: 20, relativeTo: .title3))
-                    .lineSpacing(10)
-                    .foregroundColor(.black)
-                    .fixedSize(horizontal: false, vertical: true)
+//                Text(quran.ayah.replacingOccurrences(of: "بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ", with: "", options: .literal, range: nil))
+//                    .font(.custom("me_quran", size: 20, relativeTo: .title3))
+//                    .lineSpacing(10)
+//                    .foregroundColor(.black)
+//                    .fixedSize(horizontal: false, vertical: true)
+                AttributedText(attributedString)
             }
             HStack {
                 Text(quran.other)
@@ -100,6 +103,10 @@ struct AyahView: View {
             })
         }
         .padding()
+        .onAppear {
+                   ayahText(string: quran.ayah.replacingOccurrences(of: "بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ", with: "", options: .literal, range: nil))
+                    
+                 }
         
         
     }
@@ -116,6 +123,13 @@ struct AyahView: View {
         
         
     }
+    
+    func ayahText(string: String) {
+               TajweedHtmlText.tajweedTextOnFinish(for: string, isDark: false) { (string) in
+                   attributedString = string
+                
+               }
+       }
 }
 
 struct AyahView_Previews: PreviewProvider {

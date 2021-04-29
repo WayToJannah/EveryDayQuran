@@ -13,8 +13,8 @@ struct SurahDetailView: View {
     var surahNo: Int = 1
     @State var quran = [Quran]()
     var body: some View {
-            VStack {
-                List {
+            ScrollView {
+                LazyVStack {
                     SurahDetailViewHeader()
                     ForEach(quran) { item in
                         AyahView(quran: item)
@@ -42,7 +42,7 @@ struct SurahDetailView: View {
         appDatabase?.quranReader.asyncRead { dbResult  in
             let db = try! dbResult.get()
             var quran = [Quran]()
-            let arabic = try! Row.fetchAll(db, sql: "SELECT id, surah_no, ayah_no, ayah FROM quran_uthmani where surah_no  = \(surahNo)")
+            let arabic = try! Row.fetchAll(db, sql: "SELECT id, surah_no, ayah_no, ayah FROM uthmani_tajweed where surah_no  = \(surahNo)")
             print(quran)
             let other = try! Row.fetchAll(db, sql: "SELECT id, surah_no, ayah_no, ayah FROM en_ahmedali where surah_no  = \(surahNo)")
             for i in 0..<arabic.count {
