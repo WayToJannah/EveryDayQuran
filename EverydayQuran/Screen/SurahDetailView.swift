@@ -9,12 +9,17 @@ import SwiftUI
 
 struct SurahDetailView: View {
     var body: some View {
-            VStack {
-                SurahDetailViewHeader()
-                List(0 ..< 100) { item in
-                    AyahView(ayahNumber: String(item + 1))
-                    
+            ScrollView {
+                LazyVStack {
+                    SurahDetailViewHeader()
+                    ForEach(0 ..< 100) { item in
+                        AyahView(ayahNumber: String(item + 1))
+                    }
                 }
+//                List(0 ..< 100) { item in
+//                    AyahView(ayahNumber: String(item + 1))
+//
+//                }
             }.toolbar  {
                 ToolbarItem(placement: .navigationBarTrailing){
                     Button(action: {

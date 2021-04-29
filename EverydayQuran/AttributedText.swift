@@ -13,6 +13,9 @@ struct TextWithAttributedString: View {
     var attributedText: NSAttributedString
     @State private var height: CGFloat = .zero
     
+    
+    
+    
     var body: some View {
         InternalTextView(attributedText: attributedText, dynamicHeight: $height)
             .frame(minHeight: height)

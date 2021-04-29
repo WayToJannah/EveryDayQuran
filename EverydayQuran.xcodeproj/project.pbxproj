@@ -14,6 +14,8 @@
 		C78139572639C53A00307E9A /* TajweedText.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78139562639C53A00307E9A /* TajweedText.swift */; };
 		C78139602639CAE000307E9A /* AttributedText in Frameworks */ = {isa = PBXBuildFile; productRef = C781395F2639CAE000307E9A /* AttributedText */; };
 		C781396A263AE97200307E9A /* Regex in Frameworks */ = {isa = PBXBuildFile; productRef = C7813969263AE97200307E9A /* Regex */; };
+		C7813975263B051600307E9A /* TajweedHtmlText.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7813974263B051600307E9A /* TajweedHtmlText.swift */; };
+		C781397A263B10A500307E9A /* HTMLText.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7813979263B10A500307E9A /* HTMLText.swift */; };
 		C7DA5AD42636E4DF0021EACC /* EverydayQuranApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DA5AD32636E4DF0021EACC /* EverydayQuranApp.swift */; };
 		C7DA5AD62636E4DF0021EACC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DA5AD52636E4DF0021EACC /* ContentView.swift */; };
 		C7DA5AD82636E4E10021EACC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7DA5AD72636E4E10021EACC /* Assets.xcassets */; };
@@ -65,6 +67,8 @@
 		BA122C0AD1CFE7908FE8EC67 /* Pods-EverydayQuran.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverydayQuran.release.xcconfig"; path = "Target Support Files/Pods-EverydayQuran/Pods-EverydayQuran.release.xcconfig"; sourceTree = "<group>"; };
 		C78139502639C4AA00307E9A /* AttributedText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributedText.swift; sourceTree = "<group>"; };
 		C78139562639C53A00307E9A /* TajweedText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TajweedText.swift; sourceTree = "<group>"; };
+		C7813974263B051600307E9A /* TajweedHtmlText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TajweedHtmlText.swift; sourceTree = "<group>"; };
+		C7813979263B10A500307E9A /* HTMLText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLText.swift; sourceTree = "<group>"; };
 		C7DA5AD02636E4DF0021EACC /* EverydayQuran.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EverydayQuran.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7DA5AD32636E4DF0021EACC /* EverydayQuranApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverydayQuranApp.swift; sourceTree = "<group>"; };
 		C7DA5AD52636E4DF0021EACC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -154,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				C78139562639C53A00307E9A /* TajweedText.swift */,
+				C7813974263B051600307E9A /* TajweedHtmlText.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -202,6 +207,7 @@
 				C7DA5ADC2636E4E10021EACC /* Info.plist */,
 				C7DA5AD92636E4E10021EACC /* Preview Content */,
 				C78139502639C4AA00307E9A /* AttributedText.swift */,
+				C7813979263B10A500307E9A /* HTMLText.swift */,
 			);
 			path = EverydayQuran;
 			sourceTree = "<group>";
@@ -527,9 +533,11 @@
 				C7EF8A192637685E0051CEA4 /* Color+Ex.swift in Sources */,
 				C7EF89EE263727100051CEA4 /* HomeViewHeader.swift in Sources */,
 				C7DA5AD62636E4DF0021EACC /* ContentView.swift in Sources */,
+				C781397A263B10A500307E9A /* HTMLText.swift in Sources */,
 				C7EF89F326372B420051CEA4 /* HomeView.swift in Sources */,
 				C78139572639C53A00307E9A /* TajweedText.swift in Sources */,
 				C7EF8A072637309D0051CEA4 /* HeaderTab.swift in Sources */,
+				C7813975263B051600307E9A /* TajweedHtmlText.swift in Sources */,
 				C7EF8A1E26376A060051CEA4 /* AyahView.swift in Sources */,
 				C7DA5AD42636E4DF0021EACC /* EverydayQuranApp.swift in Sources */,
 				C7EF89DA2637200C0051CEA4 /* SurahTitleView.swift in Sources */,
