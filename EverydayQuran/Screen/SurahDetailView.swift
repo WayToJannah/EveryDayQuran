@@ -43,6 +43,7 @@ struct SurahDetailView: View {
         }
         .onWillDisappear { // << order does NOT matter
             versePlayer.playerId = 0
+            versePlayer.player = nil
         }
         
     }

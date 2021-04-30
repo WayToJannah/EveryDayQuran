@@ -18,6 +18,14 @@ struct AyahView: View {
     @EnvironmentObject var versePlayer: VersePlayer
     let NC = NotificationCenter.default
     @State var isPlaying: Bool = false
+    @AppStorage("quranReciter")  var quranReciter = QuranReciter.shatri
+    @AppStorage("recitationStyle")  var recitationStyle = RecitationStyle.none
+    var baseURL: String {
+        "\(QuranReciter.verserURL(quranReciter: quranReciter, recitationStyle: recitationStyle))"
+    }
+    var audioFileName: String {
+        "\(String(format: "%03d%03d", quran.surahNo, quran.ayahNo))"
+    }
     
     var body: some View {
         VStack(spacing: 10) {
@@ -40,7 +48,8 @@ struct AyahView: View {
                         if versePlayer.playerId == quran.id {
                             isPlaying = versePlayer.pauseOrPlay()
                         } else {
-                            versePlayer.load(id: quran.surahNo, playerId: quran.id)
+                            versePlayer.load(url: "\(baseURL)\(audioFileName).mp3", playerId: quran.id)
+                            versePlayer.downloadAudio(urlString: "\(baseURL)\(audioFileName).mp3", destination: quranReciter.name, audioName: audioFileName)
                             isPlaying = versePlayer.pauseOrPlay()
                         }
                         

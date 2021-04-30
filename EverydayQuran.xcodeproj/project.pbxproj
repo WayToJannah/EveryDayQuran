@@ -17,6 +17,7 @@
 		C7813998263B48EE00307E9A /* UIFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7813997263B48EE00307E9A /* UIFonts.swift */; };
 		C781399D263B7CA000307E9A /* VersePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C781399C263B7CA000307E9A /* VersePlayer.swift */; };
 		C78139A3263B91C400307E9A /* View+LifeCycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78139A2263B91C400307E9A /* View+LifeCycle.swift */; };
+		C78139AB263C217700307E9A /* QuranRecitation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78139AA263C217700307E9A /* QuranRecitation.swift */; };
 		C7DA5AD42636E4DF0021EACC /* EverydayQuranApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DA5AD32636E4DF0021EACC /* EverydayQuranApp.swift */; };
 		C7DA5AD62636E4DF0021EACC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DA5AD52636E4DF0021EACC /* ContentView.swift */; };
 		C7DA5AD82636E4E10021EACC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7DA5AD72636E4E10021EACC /* Assets.xcassets */; };
@@ -78,6 +79,7 @@
 		C7813997263B48EE00307E9A /* UIFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFonts.swift; sourceTree = "<group>"; };
 		C781399C263B7CA000307E9A /* VersePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersePlayer.swift; sourceTree = "<group>"; };
 		C78139A2263B91C400307E9A /* View+LifeCycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+LifeCycle.swift"; sourceTree = "<group>"; };
+		C78139AA263C217700307E9A /* QuranRecitation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuranRecitation.swift; sourceTree = "<group>"; };
 		C7DA5AD02636E4DF0021EACC /* EverydayQuran.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EverydayQuran.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7DA5AD32636E4DF0021EACC /* EverydayQuranApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverydayQuranApp.swift; sourceTree = "<group>"; };
 		C7DA5AD52636E4DF0021EACC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -299,6 +301,7 @@
 				C7EF8A5F26387E2D0051CEA4 /* Bookmark.swift */,
 				C7813992263B40C300307E9A /* HomeModel.swift */,
 				C781399C263B7CA000307E9A /* VersePlayer.swift */,
+				C78139AA263C217700307E9A /* QuranRecitation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -573,6 +576,7 @@
 				C7EF8A5826386A6B0051CEA4 /* Query.swift in Sources */,
 				C7EF8A6026387E2D0051CEA4 /* Bookmark.swift in Sources */,
 				C7813983263B22A700307E9A /* TajweedHtmlText.swift in Sources */,
+				C78139AB263C217700307E9A /* QuranRecitation.swift in Sources */,
 				C7EF8A192637685E0051CEA4 /* Color+Ex.swift in Sources */,
 				C7813993263B40C400307E9A /* HomeModel.swift in Sources */,
 				C7EF89EE263727100051CEA4 /* HomeViewHeader.swift in Sources */,

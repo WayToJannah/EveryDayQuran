@@ -15,6 +15,9 @@ struct EverydayQuranApp: App {
             ContentView()
                 .environment(\.appDatabase, AppDatabase.shared)
                 .environmentObject(VersePlayer())
+                .onAppear {
+                    print(FileManager.default.urls(for: .documentDirectory,in: .userDomainMask).first)
+                }
                 
         }
     }
