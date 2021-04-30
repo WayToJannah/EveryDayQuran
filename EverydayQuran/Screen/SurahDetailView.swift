@@ -7,10 +7,12 @@
 
 import SwiftUI
 import GRDB
+import AVFoundation
 
 struct SurahDetailView: View {
     @Environment(\.appDatabase) var appDatabase
     var surahNo: Int = 1
+    var surahArabicName: String =  "Surah Al Baqarah"
     @State var quran = [Quran]()
     var body: some View {
             ScrollView {
@@ -34,7 +36,7 @@ struct SurahDetailView: View {
                 }
 
             }
-            .navigationTitle("Surah Al Baqarah")
+            .navigationTitle(surahArabicName)
         
     }
     func getQuran() {

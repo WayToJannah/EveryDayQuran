@@ -12,6 +12,10 @@
 		B44083B526E5178B2CE3D232 /* Pods_EverydayQuranTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C45F27476444912BB910A2A /* Pods_EverydayQuranTests.framework */; };
 		C7813983263B22A700307E9A /* TajweedHtmlText.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7813982263B22A700307E9A /* TajweedHtmlText.swift */; };
 		C7813989263B22C300307E9A /* AttributedText in Frameworks */ = {isa = PBXBuildFile; productRef = C7813988263B22C300307E9A /* AttributedText */; };
+		C781398E263B389600307E9A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C781398D263B389600307E9A /* SettingsView.swift */; };
+		C7813993263B40C400307E9A /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7813992263B40C300307E9A /* HomeModel.swift */; };
+		C7813998263B48EE00307E9A /* UIFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7813997263B48EE00307E9A /* UIFonts.swift */; };
+		C781399D263B7CA000307E9A /* VersePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C781399C263B7CA000307E9A /* VersePlayer.swift */; };
 		C7DA5AD42636E4DF0021EACC /* EverydayQuranApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DA5AD32636E4DF0021EACC /* EverydayQuranApp.swift */; };
 		C7DA5AD62636E4DF0021EACC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DA5AD52636E4DF0021EACC /* ContentView.swift */; };
 		C7DA5AD82636E4E10021EACC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7DA5AD72636E4E10021EACC /* Assets.xcassets */; };
@@ -68,6 +72,10 @@
 		8266A6A88B9ABCF9BAC411C7 /* Pods-EverydayQuranTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverydayQuranTests.debug.xcconfig"; path = "Target Support Files/Pods-EverydayQuranTests/Pods-EverydayQuranTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BA122C0AD1CFE7908FE8EC67 /* Pods-EverydayQuran.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverydayQuran.release.xcconfig"; path = "Target Support Files/Pods-EverydayQuran/Pods-EverydayQuran.release.xcconfig"; sourceTree = "<group>"; };
 		C7813982263B22A700307E9A /* TajweedHtmlText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TajweedHtmlText.swift; sourceTree = "<group>"; };
+		C781398D263B389600307E9A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		C7813992263B40C300307E9A /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		C7813997263B48EE00307E9A /* UIFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFonts.swift; sourceTree = "<group>"; };
+		C781399C263B7CA000307E9A /* VersePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersePlayer.swift; sourceTree = "<group>"; };
 		C7DA5AD02636E4DF0021EACC /* EverydayQuran.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EverydayQuran.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7DA5AD32636E4DF0021EACC /* EverydayQuranApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverydayQuranApp.swift; sourceTree = "<group>"; };
 		C7DA5AD52636E4DF0021EACC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -241,6 +249,7 @@
 				C7EF89DE263722100051CEA4 /* PoppinsSemiBold.ttf */,
 				C7DA5B082636F14C0021EACC /* PoppinsBold.ttf */,
 				C7DA5B092636F14C0021EACC /* PoppinsRegular.ttf */,
+				C7813997263B48EE00307E9A /* UIFonts.swift */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -257,6 +266,7 @@
 				C7EF8A1326374FA20051CEA4 /* SurahDetailViewHeader.swift */,
 				C7EF8A1D26376A060051CEA4 /* AyahView.swift */,
 				C7EF8A22263773F60051CEA4 /* SurahDetailView.swift */,
+				C781398D263B389600307E9A /* SettingsView.swift */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -276,6 +286,8 @@
 				C7EF8A52263869430051CEA4 /* QuranRequest.swift */,
 				C7EF8A5726386A6B0051CEA4 /* Query.swift */,
 				C7EF8A5F26387E2D0051CEA4 /* Bookmark.swift */,
+				C7813992263B40C300307E9A /* HomeModel.swift */,
+				C781399C263B7CA000307E9A /* VersePlayer.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -545,10 +557,13 @@
 				C7EF8A3B263847010051CEA4 /* Quran.swift in Sources */,
 				C7DA5B032636E88D0021EACC /* SplashScreen.swift in Sources */,
 				C7EF8A23263773F60051CEA4 /* SurahDetailView.swift in Sources */,
+				C781399D263B7CA000307E9A /* VersePlayer.swift in Sources */,
+				C7813998263B48EE00307E9A /* UIFonts.swift in Sources */,
 				C7EF8A5826386A6B0051CEA4 /* Query.swift in Sources */,
 				C7EF8A6026387E2D0051CEA4 /* Bookmark.swift in Sources */,
 				C7813983263B22A700307E9A /* TajweedHtmlText.swift in Sources */,
 				C7EF8A192637685E0051CEA4 /* Color+Ex.swift in Sources */,
+				C7813993263B40C400307E9A /* HomeModel.swift in Sources */,
 				C7EF89EE263727100051CEA4 /* HomeViewHeader.swift in Sources */,
 				C7EF8A4526384CEF0051CEA4 /* AppDatabase.swift in Sources */,
 				C7EF8A4E263860CE0051CEA4 /* Persistance.swift in Sources */,
@@ -559,6 +574,7 @@
 				C7EF8A1E26376A060051CEA4 /* AyahView.swift in Sources */,
 				C7DA5AD42636E4DF0021EACC /* EverydayQuranApp.swift in Sources */,
 				C7EF89DA2637200C0051CEA4 /* SurahTitleView.swift in Sources */,
+				C781398E263B389600307E9A /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 @main
 struct EverydayQuranApp: App {
@@ -13,6 +14,7 @@ struct EverydayQuranApp: App {
         WindowGroup {
             ContentView()
                 .environment(\.appDatabase, AppDatabase.shared)
+                .environmentObject(VersePlayer())
                 
         }
     }
@@ -23,9 +25,26 @@ private struct AppDatabaseKey: EnvironmentKey {
     static let defaultValue: AppDatabase? = nil
 }
 
+private struct PlayerKey: EnvironmentKey {
+    static var defaultValue: AVPlayer? = nil
+}
+
+private struct PlayingIdKey: EnvironmentKey {
+    static var defaultValue: Int = 0
+}
+
 extension EnvironmentValues {
     var appDatabase: AppDatabase? {
         get { self[AppDatabaseKey.self] }
         set { self[AppDatabaseKey.self] = newValue }
+    }
+    var player: AVPlayer? {
+        get { self[PlayerKey.self] }
+        set { self[PlayerKey.self] = newValue }
+    }
+    
+    var playingId: Int {
+        get { self[PlayingIdKey.self] }
+        set { self[PlayingIdKey.self] = newValue }
     }
 }

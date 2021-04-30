@@ -11,6 +11,7 @@ struct SurahTitleView: View {
     var height: CGFloat = 78
     var surahNo: String = "1"
     var surahArabicName: String = "ناﺮﻤﻋ لآ"
+    var surahOtherName: String = "ناﺮﻤﻋ لآ"
     var body: some View {
         HStack {
                 ZStack {
@@ -21,7 +22,7 @@ struct SurahTitleView: View {
                         .foregroundColor(.black)
                 }
             VStack(alignment: .leading) {
-                Text("Al - Fatiah")
+                Text(surahOtherName)
                     .font(.custom("PoppinsSemiBold", size: 17, relativeTo: .headline))
                     .foregroundColor(.black)
                   
@@ -31,7 +32,8 @@ struct SurahTitleView: View {
             }
             Spacer()
             Text(surahArabicName)
-                .font(.custom("Amiri-Regular", size: 20, relativeTo: .title3))
+                .font(.custom("Amiri-Bold", size: 20, relativeTo: .title3))
+                .fontWeight(.bold)
                 .foregroundColor(Color("Subtitle"))
             
         }

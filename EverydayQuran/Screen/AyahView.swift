@@ -8,13 +8,15 @@
 import SwiftUI
 import AVFoundation
 import AttributedText
+import AVFoundation
 
 struct AyahView: View {
     @Environment(\.appDatabase) var appDatabase
     @State var attributedString: NSMutableAttributedString = NSMutableAttributedString(string: "")
     var quran: Quran = Quran(id: 1, surahNo: 2, ayahNo: 1, ayah: "")
     @State var bookmark: Bookmark? = nil
-    @State var player: AVPlayer? = nil
+    @EnvironmentObject var versePlayer: VersePlayer
+    @State var isPlaying: Bool = false
     var body: some View {
         VStack(spacing: 10) {
             ZStack {
@@ -33,18 +35,22 @@ struct AyahView: View {
                     })
                     .buttonStyle(BorderlessButtonStyle())
                     Button(action: {
-                        if player == nil {
-                            loadAudio(id: quran.surahNo)
-                            player?.play()
-                        } else if player?.rate == 0 {
-                            player?.play()
+                        if versePlayer.playerId == quran.id {
+                            isPlaying = versePlayer.pauseOrPlay()
                         } else {
-                            player?.pause()
+                            versePlayer.load(id: quran.surahNo, playerId: quran.id)
+                          isPlaying = versePlayer.pauseOrPlay()
                         }
-                       
+                        
                     }, label: {
-                        Image("PlayAyah")
-                            
+                        
+                        if versePlayer.playerId != quran.id || !isPlaying {
+                            Image("PlayAyah")
+                        } else {
+                            Image("BookmarkAyah")
+                        }
+                    
+                        
                     })
                     .buttonStyle(BorderlessButtonStyle())
                     Button(action: {
@@ -81,12 +87,18 @@ struct AyahView: View {
             .padding(.bottom, 10)
             HStack {
                 Spacer()
-//                Text(quran.ayah.replacingOccurrences(of: "بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ", with: "", options: .literal, range: nil))
-//                    .font(.custom("me_quran", size: 20, relativeTo: .title3))
-//                    .lineSpacing(10)
-//                    .foregroundColor(.black)
-//                    .fixedSize(horizontal: false, vertical: true)
+                //                Text(quran.ayah.replacingOccurrences(of: "بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ", with: "", options: .literal, range: nil))
+                //                    .font(.custom("me_quran", size: 20, relativeTo: .title3))
+                //                    .lineSpacing(10)
+                //                    .foregroundColor(.black)
+                //                    .fixedSize(horizontal: false, vertical: true)
                 AttributedText(attributedString)
+                    
+                    .onAppear {
+                        ayahText(string: quran.ayah.replacingOccurrences(of: "بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ", with: "", options: .literal, range: nil))
+                        
+                    }
+                    .multilineTextAlignment(.trailing)
             }
             HStack {
                 Text(quran.other)
@@ -103,10 +115,7 @@ struct AyahView: View {
             })
         }
         .padding()
-        .onAppear {
-                   ayahText(string: quran.ayah.replacingOccurrences(of: "بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ", with: "", options: .literal, range: nil))
-                    
-                 }
+        
         
         
     }
@@ -116,20 +125,12 @@ struct AyahView: View {
             .foregroundColor(Color("AyahHeader"))
     }
     
-    func loadAudio(id: Int) {
-        guard let url = URL.init(string: "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/\(String(format:"%03d", id)).mp3") else { return }
-        let playerItem = AVPlayerItem.init(url: url)
-        player = AVPlayer.init(playerItem: playerItem)
-        
-        
-    }
-    
     func ayahText(string: String) {
-               TajweedHtmlText.tajweedTextOnFinish(for: string, isDark: false) { (string) in
-                   attributedString = string
-                
-               }
-       }
+        TajweedHtmlText.tajweedTextOnFinish(for: string, isDark: false) { (string) in
+            attributedString = string
+            
+        }
+    }
 }
 
 struct AyahView_Previews: PreviewProvider {

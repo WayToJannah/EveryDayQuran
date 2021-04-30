@@ -23,15 +23,15 @@ struct ContentView: View {
             }
          
             .edgesIgnoringSafeArea(.all)
-          SplashScreen()
-            .opacity(showSplash ? 1 : 0)
-            .onAppear {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-                withAnimation() {
-                  self.showSplash = false
-                }
-              }
-          }
+//          SplashScreen()
+//            .opacity(showSplash ? 1 : 0)
+//            .onAppear {
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+//                withAnimation() {
+//                  self.showSplash = false
+//                }
+//              }
+//          }
         }
     }
 }

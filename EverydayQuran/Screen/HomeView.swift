@@ -15,7 +15,7 @@ struct HomeView: View {
     @State var color = Color("HeaderText")
     //    @Query(QuranRequest(request: .surahTitles)) private var surahTitle: [Row]
     
-    @State var surahTitle = [Quran]()
+    @State var homeModel = [HomeModel]()
     
     func width(totalWidth: CGFloat) -> CGFloat {
         totalWidth / 5
@@ -59,9 +59,9 @@ struct HomeView: View {
                     
                     ScrollView {
                         LazyVStack {
-                            ForEach(surahTitle) { content in
-                                NavigationLink(destination: SurahDetailView(surahNo: content.id)) {
-                                    SurahTitleView(height:geometry.size.height * 0.096 ,surahNo: String(content.id), surahArabicName: content.ayah)
+                            ForEach(homeModel) { content in
+                                NavigationLink(destination: SurahDetailView(surahNo: content.id, surahArabicName: content.arabic)) {
+                                    SurahTitleView(height:geometry.size.height * 0.096 ,surahNo: String(content.id), surahArabicName: content.arabic, surahOtherName: content.other )
                                 }
                             }
                             
@@ -115,12 +115,13 @@ struct HomeView: View {
         
         appDatabase?.quranReader.asyncRead { dbResult  in
             let db = try! dbResult.get()
-            var surahTitle = [Quran]()
-            try! Row.fetchAll(db, sql: "SELECT id, arabic FROM surah_names").forEach {
-                surahTitle.append( Quran(id: $0["id"], ayah: $0["arabic"]))
+            var homeModel = [HomeModel]()
+            let arabic = try! Row.fetchAll(db, sql: "SELECT id, arabic FROM surah_names")
+            let other = try! Row.fetchAll(db, sql: "SELECT english FROM surah_names")
+            for i in 0..<arabic.count {
+                homeModel.append(HomeModel(id: arabic[i]["id"], arabic: arabic[i]["arabic"], other: other[i]["english"]))
             }
-            self.surahTitle = surahTitle
-            print(surahTitle)
+            self.homeModel = homeModel
             
         }
     }
