@@ -8,9 +8,9 @@
 import SwiftUI
 import AVFoundation
 import AttributedText
-import AVFoundation
 
 struct AyahView: View {
+    
     @Environment(\.appDatabase) var appDatabase
     @State var attributedString: NSMutableAttributedString = NSMutableAttributedString(string: "")
     var quran: Quran = Quran(id: 1, surahNo: 2, ayahNo: 1, ayah: "")
@@ -19,12 +19,24 @@ struct AyahView: View {
     let NC = NotificationCenter.default
     @State var isPlaying: Bool = false
     @AppStorage("quranReciter")  var quranReciter = QuranReciter.shatri
-    @AppStorage("recitationStyle")  var recitationStyle = RecitationStyle.none
+    @AppStorage("recitationStyle")  var recitationStyle = RecitationStyle.murattal
+    @AppStorage("lastViewSurahNo") var surahId = 1
+    @AppStorage("lastViewAyahNo") var ayahId = 1
+    @State var loading: Bool = false
     var baseURL: String {
         "\(QuranReciter.verserURL(quranReciter: quranReciter, recitationStyle: recitationStyle))"
     }
     var audioFileName: String {
         "\(String(format: "%03d%03d", quran.surahNo, quran.ayahNo))"
+    }
+    var recitationStyleName: String {
+        switch quranReciter {
+        case .abdulBaset, .husary, .minshawi:
+            return recitationStyle.name
+        default:
+            return "audios"
+        }
+      
     }
     
     var body: some View {
@@ -48,19 +60,29 @@ struct AyahView: View {
                         if versePlayer.playerId == quran.id {
                             isPlaying = versePlayer.pauseOrPlay()
                         } else {
-                            versePlayer.load(url: "\(baseURL)\(audioFileName).mp3", playerId: quran.id)
-                            versePlayer.downloadAudio(urlString: "\(baseURL)\(audioFileName).mp3", destination: quranReciter.name, audioName: audioFileName)
-                            isPlaying = versePlayer.pauseOrPlay()
+                            loading = true
+                            versePlayer.player = nil
+                            versePlayer.playerId = 0
+                            versePlayer.downloadAudio(urlString: "\(baseURL)\(audioFileName).mp3", destination: quranReciter.name, style: recitationStyleName, audioName: audioFileName){
+                                guard let url = $0 else { return }
+                                DispatchQueue.main.async {
+                                    versePlayer.load(url: url, playerId: quran.id)
+                                    loading = false
+                                    isPlaying = versePlayer.pauseOrPlay()
+                                }
+                            }
                         }
                         
                     }, label: {
-                        if versePlayer.playerId != quran.id || !isPlaying {
-                            Image("PlayAyah")
-                        } else {
-                            Image("BookmarkAyah")
+                        if loading {
+                            ProgressView()
+                        }else {
+                            if versePlayer.playerId != quran.id || !isPlaying {
+                                Image("PlayAyah")
+                            } else {
+                                Image("BookmarkAyah")
+                            }
                         }
-                        
-                        
                     })
                     .buttonStyle(BorderlessButtonStyle())
                     Button(action: {
@@ -103,12 +125,9 @@ struct AyahView: View {
                 //                    .foregroundColor(.black)
                 //                    .fixedSize(horizontal: false, vertical: true)
                 AttributedText(attributedString)
-                    
                     .onAppear {
                         ayahText(string: quran.ayah.replacingOccurrences(of: "بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ", with: "", options: .literal, range: nil))
-                        
                     }
-                    .multilineTextAlignment(.trailing)
             }
             HStack {
                 Text(quran.other)
@@ -126,8 +145,11 @@ struct AyahView: View {
             
             self.NC.addObserver(forName: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: versePlayer.playerItem, queue: nil,
                                 using: self.finishPlayback(_:))
+            surahId = quran.surahNo
+            ayahId = quran.ayahNo
         }
         .padding()
+       
         
         
         

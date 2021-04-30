@@ -13,9 +13,11 @@ struct HomeView: View {
     @Environment(\.appDatabase) var appDatabase
     @State var selectionIndex = 1
     @State var color = Color("HeaderText")
-    //    @Query(QuranRequest(request: .surahTitles)) private var surahTitle: [Row]
+    @AppStorage("lastViewSurahNo") var surahNo = 1
+    @AppStorage("lastViewAyahNo") var ayahNo = 1
     
     @State var homeModel = [HomeModel]()
+    @State var lastViewSurahName: String = ""
     
     func width(totalWidth: CGFloat) -> CGFloat {
         totalWidth / 5
@@ -37,7 +39,7 @@ struct HomeView: View {
                         .onAppear { getSurahTitles() }
                     Text("Tanvir Ahassan")
                         .font(.custom("PoppinsSemiBold", size: 37, relativeTo: .title3))
-                    HomeViewHeader(height: geometry.size.height * 0.161)
+                    HomeViewHeader(height: geometry.size.height * 0.161, surahName: lastViewSurahName, ayahNo: ayahNo)
                     HStack {
                         Spacer()
                         ForEach(0 ..< 4) { item in
@@ -60,7 +62,7 @@ struct HomeView: View {
                     ScrollView {
                         LazyVStack {
                             ForEach(homeModel) { content in
-                                NavigationLink(destination: SurahDetailView(surahNo: content.id, surahArabicName: content.arabic)) {
+                                NavigationLink(destination: SurahDetailView(surahNo: content.id, surahArabicName: content.arabic, surahOtherName: content.other)) {
                                     SurahTitleView(height:geometry.size.height * 0.096 ,surahNo: String(content.id), surahArabicName: content.arabic, surahOtherName: content.other )
                                 }
                             }
@@ -116,11 +118,14 @@ struct HomeView: View {
         appDatabase?.quranReader.asyncRead { dbResult  in
             let db = try! dbResult.get()
             var homeModel = [HomeModel]()
+            lastViewSurahName = try! Row.fetchOne(db, sql: "SELECT  arabic FROM surah_names WHERE id = \(surahNo)")!["arabic"]
             let arabic = try! Row.fetchAll(db, sql: "SELECT id, arabic FROM surah_names")
+        
             let other = try! Row.fetchAll(db, sql: "SELECT english FROM surah_names")
             for i in 0..<arabic.count {
                 homeModel.append(HomeModel(id: arabic[i]["id"], arabic: arabic[i]["arabic"], other: other[i]["english"]))
             }
+        
             self.homeModel = homeModel
             
         }

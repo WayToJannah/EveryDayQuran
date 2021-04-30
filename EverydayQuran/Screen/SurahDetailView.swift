@@ -14,11 +14,12 @@ struct SurahDetailView: View {
     @EnvironmentObject var versePlayer: VersePlayer
     var surahNo: Int = 1
     var surahArabicName: String =  "Surah Al Baqarah"
+    var surahOtherName: String =  "Surah Al Baqarah"
     @State var quran = [Quran]()
     var body: some View {
         ScrollView {
             LazyVStack {
-                SurahDetailViewHeader()
+                SurahDetailViewHeader(arabicName: surahArabicName, otherName: surahOtherName)
                 ForEach(quran) { item in
                     AyahView(quran: item)
                 }

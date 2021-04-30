@@ -10,6 +10,8 @@ import SwiftUI
 struct SurahDetailViewHeader: View {
     var width: CGFloat = 214 // 0.570
     var height: CGFloat = 48 // 0.0591
+    var arabicName: String = ""
+    var otherName: String = ""
     var body: some View {
         ZStack {
             HStack {
@@ -20,10 +22,10 @@ struct SurahDetailViewHeader: View {
             }.padding()
                
             VStack {
-                Text("Al-Fatiah")
-                    .font(.custom("PoppinsBold", size: 34, relativeTo: .title2))
+                Text(arabicName)
+                    .font(.custom("Amiri-Bold", size: 34, relativeTo: .title2))
                     .multilineTextAlignment(.center)
-                    Text("The Opening")
+                    Text(otherName)
                         .font(.custom("PoppinsSemiBold", size: 20, relativeTo: .caption2))
                         .multilineTextAlignment(.center)
                 

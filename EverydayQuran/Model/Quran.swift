@@ -16,3 +16,9 @@ struct Quran: Identifiable {
 }
 
 
+struct  LastView: Hashable, Equatable, Codable {
+    var surahId: Int
+    var ayahId: Int
+}
+
+
