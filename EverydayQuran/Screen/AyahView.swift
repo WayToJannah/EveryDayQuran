@@ -116,10 +116,10 @@ struct AyahView: View {
             })
             
             self.NC.addObserver(forName: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: versePlayer.playerItem, queue: nil,
-                                   using: self.finishPlayback(_:))
+                                using: self.finishPlayback(_:))
         }
         .padding()
-       
+        
         
         
         
@@ -143,7 +143,7 @@ struct AyahView: View {
         versePlayer.playerId = 0
     }
     
-
+    
     
 }
 

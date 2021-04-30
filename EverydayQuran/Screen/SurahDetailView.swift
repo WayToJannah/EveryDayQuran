@@ -16,34 +16,34 @@ struct SurahDetailView: View {
     var surahArabicName: String =  "Surah Al Baqarah"
     @State var quran = [Quran]()
     var body: some View {
-            ScrollView {
-                LazyVStack {
-                    SurahDetailViewHeader()
-                    ForEach(quran) { item in
-                        AyahView(quran: item)
-                    }
+        ScrollView {
+            LazyVStack {
+                SurahDetailViewHeader()
+                ForEach(quran) { item in
+                    AyahView(quran: item)
                 }
-            }.onAppear{
-                getQuran()
             }
-            .toolbar  {
-                ToolbarItem(placement: .navigationBarTrailing){
-                    Button(action: {
-                        print("navigationBarTrailing")
-                    }, label: {
-                        Image("Search")
-                            .foregroundColor(.black)
-                    })
-                }
-
+        }.onAppear{
+            getQuran()
+        }
+        .toolbar  {
+            ToolbarItem(placement: .navigationBarTrailing){
+                Button(action: {
+                    print("navigationBarTrailing")
+                }, label: {
+                    Image("Search")
+                        .foregroundColor(.black)
+                })
             }
-            .navigationTitle(surahArabicName)
-            .onDisappear {
-                   print("x Default disappear")
-               }
-              .onWillDisappear { // << order does NOT matter
-                versePlayer.playerId = 0
-               }
+            
+        }
+        .navigationTitle(surahArabicName)
+        .onDisappear {
+            print("x Default disappear")
+        }
+        .onWillDisappear { // << order does NOT matter
+            versePlayer.playerId = 0
+        }
         
     }
     func getQuran() {
