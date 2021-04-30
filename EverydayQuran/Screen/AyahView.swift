@@ -16,7 +16,9 @@ struct AyahView: View {
     var quran: Quran = Quran(id: 1, surahNo: 2, ayahNo: 1, ayah: "")
     @State var bookmark: Bookmark? = nil
     @EnvironmentObject var versePlayer: VersePlayer
+    let NC = NotificationCenter.default
     @State var isPlaying: Bool = false
+    
     var body: some View {
         VStack(spacing: 10) {
             ZStack {
@@ -39,17 +41,16 @@ struct AyahView: View {
                             isPlaying = versePlayer.pauseOrPlay()
                         } else {
                             versePlayer.load(id: quran.surahNo, playerId: quran.id)
-                          isPlaying = versePlayer.pauseOrPlay()
+                            isPlaying = versePlayer.pauseOrPlay()
                         }
                         
                     }, label: {
-                        
                         if versePlayer.playerId != quran.id || !isPlaying {
                             Image("PlayAyah")
                         } else {
                             Image("BookmarkAyah")
                         }
-                    
+                        
                         
                     })
                     .buttonStyle(BorderlessButtonStyle())
@@ -113,8 +114,12 @@ struct AyahView: View {
             try? appDatabase?.dbWriter.read({ db in
                 bookmark = try Bookmark.fetchOne(db, sql: "SELECT * FROM Bookmark where ayahNo = ?", arguments: [quran.ayahNo])
             })
+            
+            self.NC.addObserver(forName: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: versePlayer.playerItem, queue: nil,
+                                   using: self.finishPlayback(_:))
         }
         .padding()
+       
         
         
         
@@ -131,6 +136,15 @@ struct AyahView: View {
             
         }
     }
+    
+    func finishPlayback(_ notification: Notification) {
+        print("finishPlayback")
+        isPlaying = false
+        versePlayer.playerId = 0
+    }
+    
+
+    
 }
 
 struct AyahView_Previews: PreviewProvider {

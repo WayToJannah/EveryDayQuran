@@ -11,6 +11,7 @@ import AVFoundation
 
 struct SurahDetailView: View {
     @Environment(\.appDatabase) var appDatabase
+    @EnvironmentObject var versePlayer: VersePlayer
     var surahNo: Int = 1
     var surahArabicName: String =  "Surah Al Baqarah"
     @State var quran = [Quran]()
@@ -37,6 +38,12 @@ struct SurahDetailView: View {
 
             }
             .navigationTitle(surahArabicName)
+            .onDisappear {
+                   print("x Default disappear")
+               }
+              .onWillDisappear { // << order does NOT matter
+                versePlayer.playerId = 0
+               }
         
     }
     func getQuran() {

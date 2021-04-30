@@ -12,11 +12,12 @@ class VersePlayer: ObservableObject {
  
     @Published var playerId: Int = 0
     @Published var player: AVPlayer? = nil
+    @Published var playerItem: AVPlayerItem? = nil
     
     
     func load(id: Int, playerId: Int){
         guard let url = URL.init(string: "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/\(String(format:"%03d", id)).mp3") else { return }
-        let playerItem = AVPlayerItem.init(url: url)
+        playerItem = AVPlayerItem.init(url: url)
         player = AVPlayer.init(playerItem: playerItem)
         self.playerId = playerId
     }
