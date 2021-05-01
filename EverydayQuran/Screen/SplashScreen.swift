@@ -22,7 +22,7 @@ struct SplashScreen: View {
                         .shadow(radius: 20)
                     Spacer()
                 }
-             
+                
                 Spacer()
                 Spacer()
                 Spacer()
@@ -30,20 +30,14 @@ struct SplashScreen: View {
                 Button(action: {print("hi")}, label: {
                     Text("Get Started").font(.custom("PoppinsSemiBold", size: 18)).fontWeight(.heavy).foregroundColor(Color("GetStarted")).multilineTextAlignment(.center)
                         .background(RoundedRectangle(cornerRadius: 10).fill(Color.white)
-                                    .frame(width: geometry.size.width * 0.494, height: geometry.size.height * 0.073))
+                                        .frame(width: geometry.size.width * 0.494, height: geometry.size.height * 0.073))
                         .shadow(radius: 20)
                 })
-               
+                
                 Spacer()
             }
             .background(background)
-           
-            
-        
         }
-        
-    
-        
     }
     
     var background: some View {

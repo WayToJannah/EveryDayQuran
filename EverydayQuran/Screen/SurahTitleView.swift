@@ -14,18 +14,18 @@ struct SurahTitleView: View {
     var surahOtherName: String = "ناﺮﻤﻋ لآ"
     var body: some View {
         HStack {
-                ZStack {
-                    Image("Vector")
-                        .resizable()
-                        .frame(width: 50, height: 50, alignment: .center)
-                    Text(surahNo) .font(.custom("PoppinsSemiBold", size: 13, relativeTo: .footnote))
-                        .foregroundColor(.black)
-                }
+            ZStack {
+                Image("Vector")
+                    .resizable()
+                    .frame(width: 50, height: 50, alignment: .center)
+                Text(surahNo) .font(.custom("PoppinsSemiBold", size: 13, relativeTo: .footnote))
+                    .foregroundColor(.black)
+            }
             VStack(alignment: .leading) {
                 Text(surahOtherName)
                     .font(.custom("PoppinsSemiBold", size: 17, relativeTo: .headline))
                     .foregroundColor(.black)
-                  
+                
                 Text("Meccan - 7 Verses")
                     .foregroundColor(Color("Subtitle"))
                     .font(.subheadline)
@@ -41,9 +41,6 @@ struct SurahTitleView: View {
         .padding(.all)
         .background(Color.white)
         .cornerRadius(5)
-        
-        
-       
     }
 }
 

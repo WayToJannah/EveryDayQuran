@@ -12,26 +12,27 @@ struct SurahDetailViewHeader: View {
     var height: CGFloat = 48 // 0.0591
     var arabicName: String = ""
     var otherName: String = ""
+    let NC = NotificationCenter.default
+    @EnvironmentObject var versePlayer: VersePlayer
     var body: some View {
         ZStack {
             HStack {
                 Spacer()
                 Image("QuranIcon")
                     .opacity(0.3)
-                    
             }.padding()
-               
+            
             VStack {
                 Text(arabicName)
                     .font(.custom("Amiri-Bold", size: 34, relativeTo: .title2))
                     .multilineTextAlignment(.center)
-                    Text(otherName)
-                        .font(.custom("PoppinsSemiBold", size: 20, relativeTo: .caption2))
-                        .multilineTextAlignment(.center)
+                Text(otherName)
+                    .font(.custom("PoppinsSemiBold", size: 20, relativeTo: .caption2))
+                    .multilineTextAlignment(.center)
                 
                 Rectangle()
                     .frame(width: 200, height: 1.5)
-                   
+                
                 
                 HStack {
                     Text("Meccan")
@@ -39,7 +40,7 @@ struct SurahDetailViewHeader: View {
                         .multilineTextAlignment(.center)
                     Circle()
                         .fill(Color(.white))
-                    .frame(width: 10, height: 10)
+                        .frame(width: 10, height: 10)
                     Text("7 verses")
                         .font(.custom("PoppinsSemiBold", size: 20, relativeTo: .caption2))
                         .multilineTextAlignment(.center)
@@ -49,19 +50,12 @@ struct SurahDetailViewHeader: View {
                     .resizable()
                     .foregroundColor(.white)
                     .frame(width: width, height: height, alignment: .center)
-                    
-            
-                    
             }.foregroundColor(.white)
         }
         .background(LinearGradient(gradient: Gradient(colors: [Color("StartGradient"), Color("EndGradient")]), startPoint: .topLeading, endPoint: .bottomTrailing))
         .clipShape(RoundedRectangle(cornerRadius: 15))
         .padding()
         .shadow(color: Color("StartGradient"), radius: 20)
-        
-       
-
-        
     }
 }
 

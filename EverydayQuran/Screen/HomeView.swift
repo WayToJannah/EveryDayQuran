@@ -17,7 +17,7 @@ struct HomeView: View {
     @AppStorage("lastViewAyahNo") var ayahNo = 1
     
     @State var homeModel = [HomeModel]()
-    @State var lastViewSurahName: String = ""
+    @State var lastViewSurahName: [String] = ["", ""]
     
     func width(totalWidth: CGFloat) -> CGFloat {
         totalWidth / 5
@@ -27,9 +27,8 @@ struct HomeView: View {
         UINavigationBar.appearance().barTintColor = UIColor.white
         UINavigationBar.appearance().tintColor  = UIColor.white
         UINavigationBar.appearance().tintColor = UIColor.white
-        
-        
     }
+    
     var body: some View {
         
         GeometryReader { geometry in
@@ -39,7 +38,12 @@ struct HomeView: View {
                         .onAppear { getSurahTitles() }
                     Text("Tanvir Ahassan")
                         .font(.custom("PoppinsSemiBold", size: 37, relativeTo: .title3))
-                    HomeViewHeader(height: geometry.size.height * 0.161, surahName: lastViewSurahName, ayahNo: ayahNo)
+                    NavigationLink(
+                        destination: SurahDetailView(surahNo: surahNo, surahArabicName: lastViewSurahName[0], surahOtherName: lastViewSurahName[1]),
+                        label: {
+                            HomeViewHeader(height: geometry.size.height * 0.161, surahName: lastViewSurahName[0], ayahNo: ayahNo)
+                        })
+                    
                     HStack {
                         Spacer()
                         ForEach(0 ..< 4) { item in
@@ -52,9 +56,8 @@ struct HomeView: View {
                                 } else {
                                     HeaderTab(title: tabTitle(index: item), width: width(totalWidth: geometry.size.width), color: .constant(.black))
                                 }
-                                
                             })
-                            .padding(.top, 20)
+                            .padding(.top, 20)                            
                         }
                         Spacer()
                     }
@@ -95,8 +98,6 @@ struct HomeView: View {
                 .padding()
             }
         }
-        
-        
     }
     
     func tabTitle(index: Int) -> String {
@@ -118,14 +119,14 @@ struct HomeView: View {
         appDatabase?.quranReader.asyncRead { dbResult  in
             let db = try! dbResult.get()
             var homeModel = [HomeModel]()
-            lastViewSurahName = try! Row.fetchOne(db, sql: "SELECT  arabic FROM surah_names WHERE id = \(surahNo)")!["arabic"]
+            let lastViewSurahNames = try! Row.fetchOne(db, sql: "SELECT arabic, english FROM surah_names WHERE id = \(surahNo)")
+            lastViewSurahName = [lastViewSurahNames!["arabic"], lastViewSurahNames!["english"]]
             let arabic = try! Row.fetchAll(db, sql: "SELECT id, arabic FROM surah_names")
-        
             let other = try! Row.fetchAll(db, sql: "SELECT english FROM surah_names")
             for i in 0..<arabic.count {
                 homeModel.append(HomeModel(id: arabic[i]["id"], arabic: arabic[i]["arabic"], other: other[i]["english"]))
             }
-        
+            
             self.homeModel = homeModel
             
         }

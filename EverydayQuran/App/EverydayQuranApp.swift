@@ -46,7 +46,7 @@ extension EnvironmentValues {
         set { self[PlayerKey.self] = newValue }
     }
     
-    var playingId: Int {
+    var isplayingId: Int {
         get { self[PlayingIdKey.self] }
         set { self[PlayingIdKey.self] = newValue }
     }

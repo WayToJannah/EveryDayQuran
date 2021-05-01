@@ -19,7 +19,6 @@ struct HomeViewHeader: View {
                     Text("Last Read")
                         .font(.custom("PoppinsSemiBold", size: 13, relativeTo: .headline))
                         .foregroundColor(.white)
-                    
                 }
                 Spacer()
                 Text(surahName)
@@ -28,7 +27,7 @@ struct HomeViewHeader: View {
                     .fontWeight(.bold)
                     .padding(.bottom, 2)
                 Text("Ayah no \(ayahNo)")
-                .font(.custom("PoppinsSemiBold", size: 13, relativeTo: .headline))
+                    .font(.custom("PoppinsSemiBold", size: 13, relativeTo: .headline))
                     .foregroundColor(.white)
                     .fontWeight(.heavy)
             }

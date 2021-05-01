@@ -16,6 +16,8 @@ struct SurahDetailView: View {
     var surahArabicName: String =  "Surah Al Baqarah"
     var surahOtherName: String =  "Surah Al Baqarah"
     @State var quran = [Quran]()
+    let NC = NotificationCenter.default
+    @State var playBackObserver: NSObjectProtocol? = nil
     var body: some View {
         ScrollView {
             LazyVStack {
@@ -41,15 +43,18 @@ struct SurahDetailView: View {
         .navigationTitle(surahArabicName)
         .onDisappear {
             print("x Default disappear")
+        }.onAppear {
+            playBackObserver = self.NC.addObserver(forName: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: versePlayer.playerItem, queue: nil,
+                                                   using: self.finishPlayback(_:))
         }
         .onWillDisappear { // << order does NOT matter
             versePlayer.playerId = 0
             versePlayer.player = nil
+            NC.removeObserver(playBackObserver)
         }
-        
     }
+    
     func getQuran() {
-        quran.removeAll()
         appDatabase?.quranReader.asyncRead { dbResult  in
             let db = try! dbResult.get()
             var quran = [Quran]()
@@ -61,6 +66,11 @@ struct SurahDetailView: View {
             }
             self.quran = quran
         }
+    }
+    
+    func finishPlayback(_ notification: Notification) {
+        print("finishPlayback")
+        versePlayer.playerId = 0
     }
 }
 

@@ -19,8 +19,8 @@ struct HeaderTab: View {
                 .fontWeight(.heavy)
                 .frame(width: width, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             Rectangle()
-               .frame(width: width, height: 3)
-               .foregroundColor(color)
+                .frame(width: width, height: 3)
+                .foregroundColor(color)
         }
         .shadow(radius: 10)
     }

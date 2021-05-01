@@ -16,7 +16,6 @@ struct AyahView: View {
     var quran: Quran = Quran(id: 1, surahNo: 2, ayahNo: 1, ayah: "")
     @State var bookmark: Bookmark? = nil
     @EnvironmentObject var versePlayer: VersePlayer
-    let NC = NotificationCenter.default
     @State var isPlaying: Bool = false
     @AppStorage("quranReciter")  var quranReciter = QuranReciter.shatri
     @AppStorage("recitationStyle")  var recitationStyle = RecitationStyle.murattal
@@ -36,7 +35,6 @@ struct AyahView: View {
         default:
             return "audios"
         }
-      
     }
     
     var body: some View {
@@ -72,7 +70,6 @@ struct AyahView: View {
                                 }
                             }
                         }
-                        
                     }, label: {
                         if loading {
                             ProgressView()
@@ -110,9 +107,6 @@ struct AyahView: View {
                         }
                     })
                     .buttonStyle(BorderlessButtonStyle())
-                    
-                    
-                    
                 }
                 .padding()
             }
@@ -136,24 +130,15 @@ struct AyahView: View {
                     .fixedSize(horizontal: false, vertical: true)
                 Spacer()
             }
-            
         }
         .onAppear {
             try? appDatabase?.dbWriter.read({ db in
                 bookmark = try Bookmark.fetchOne(db, sql: "SELECT * FROM Bookmark where ayahNo = ?", arguments: [quran.ayahNo])
             })
-            
-            self.NC.addObserver(forName: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: versePlayer.playerItem, queue: nil,
-                                using: self.finishPlayback(_:))
             surahId = quran.surahNo
             ayahId = quran.ayahNo
         }
         .padding()
-       
-        
-        
-        
-        
     }
     var header: some View {
         Rectangle()
@@ -164,18 +149,8 @@ struct AyahView: View {
     func ayahText(string: String) {
         TajweedHtmlText.tajweedTextOnFinish(for: string, isDark: false) { (string) in
             attributedString = string
-            
         }
     }
-    
-    func finishPlayback(_ notification: Notification) {
-        print("finishPlayback")
-        isPlaying = false
-        versePlayer.playerId = 0
-    }
-    
-    
-    
 }
 
 struct AyahView_Previews: PreviewProvider {
